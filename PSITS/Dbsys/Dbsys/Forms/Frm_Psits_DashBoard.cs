@@ -46,5 +46,20 @@ namespace Dbsys.Forms
         {
             new Frm_Student_Status().Show();
         }
+
+        private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Frm_Receive_Payment().Show();
+        }
+
+        private void Frm_Psits_DashBoard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Frm_Psits_DashBoard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

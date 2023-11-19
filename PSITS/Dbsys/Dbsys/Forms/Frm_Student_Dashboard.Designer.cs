@@ -32,10 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvEvents = new System.Windows.Forms.DataGridView();
-            this.payBtnEvent = new System.Windows.Forms.Button();
             this.dgvMisc = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.payBtnMisc = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisc)).BeginInit();
@@ -77,25 +75,17 @@
             this.dgvEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEvents.Location = new System.Drawing.Point(75, 117);
             this.dgvEvents.Name = "dgvEvents";
-            this.dgvEvents.Size = new System.Drawing.Size(526, 113);
+            this.dgvEvents.ReadOnly = true;
+            this.dgvEvents.Size = new System.Drawing.Size(526, 158);
             this.dgvEvents.TabIndex = 1;
-            // 
-            // payBtnEvent
-            // 
-            this.payBtnEvent.Location = new System.Drawing.Point(75, 236);
-            this.payBtnEvent.Name = "payBtnEvent";
-            this.payBtnEvent.Size = new System.Drawing.Size(75, 23);
-            this.payBtnEvent.TabIndex = 2;
-            this.payBtnEvent.Text = "Pay";
-            this.payBtnEvent.UseVisualStyleBackColor = true;
-            this.payBtnEvent.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvMisc
             // 
             this.dgvMisc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMisc.Location = new System.Drawing.Point(75, 328);
             this.dgvMisc.Name = "dgvMisc";
-            this.dgvMisc.Size = new System.Drawing.Size(526, 112);
+            this.dgvMisc.ReadOnly = true;
+            this.dgvMisc.Size = new System.Drawing.Size(526, 167);
             this.dgvMisc.TabIndex = 4;
             // 
             // label5
@@ -107,16 +97,6 @@
             this.label5.Size = new System.Drawing.Size(40, 18);
             this.label5.TabIndex = 3;
             this.label5.Text = "Misc";
-            // 
-            // payBtnMisc
-            // 
-            this.payBtnMisc.Location = new System.Drawing.Point(75, 446);
-            this.payBtnMisc.Name = "payBtnMisc";
-            this.payBtnMisc.Size = new System.Drawing.Size(75, 23);
-            this.payBtnMisc.TabIndex = 2;
-            this.payBtnMisc.Text = "Pay";
-            this.payBtnMisc.UseVisualStyleBackColor = true;
-            this.payBtnMisc.Click += new System.EventHandler(this.payBtnMisc_Click);
             // 
             // label3
             // 
@@ -136,14 +116,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvMisc);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.payBtnMisc);
-            this.Controls.Add(this.payBtnEvent);
             this.Controls.Add(this.dgvEvents);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Frm_Student_Dashboard";
             this.Text = "Frm_Student_Dashboard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Student_Dashboard_FormClosing);
             this.Load += new System.EventHandler(this.Frm_Student_Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisc)).EndInit();
@@ -158,10 +137,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvEvents;
-        private System.Windows.Forms.Button payBtnEvent;
         private System.Windows.Forms.DataGridView dgvMisc;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button payBtnMisc;
         private System.Windows.Forms.Label label3;
     }
 }

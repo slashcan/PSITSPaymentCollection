@@ -42,14 +42,17 @@ namespace Dbsys.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new Frm_Payment_Form_Student().Show();
+      
         }
 
         private void payBtnMisc_Click(object sender, EventArgs e)
         {
-            new Frm_Payment_Form_Student().Show();
+            
         }
 
-        
+        private void Frm_Student_Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

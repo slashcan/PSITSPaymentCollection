@@ -36,17 +36,17 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvEvent = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvMisc = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.statusStripBottom.SuspendLayout();
@@ -114,33 +114,47 @@
             this.eventToolStripMenuItem,
             this.miscToolStripMenuItem});
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.createToolStripMenuItem.Text = "&New";
             // 
             // createUserToolStripMenuItem
             // 
             this.createUserToolStripMenuItem.Name = "createUserToolStripMenuItem";
-            this.createUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createUserToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.createUserToolStripMenuItem.Text = "User";
             this.createUserToolStripMenuItem.Click += new System.EventHandler(this.createUserToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // eventToolStripMenuItem
             // 
             this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
-            this.eventToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eventToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.eventToolStripMenuItem.Text = "Event";
             // 
             // miscToolStripMenuItem
             // 
             this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
-            this.miscToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miscToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.miscToolStripMenuItem.Text = "Misc";
+            // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.studentStatusToolStripMenuItem});
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.searchToolStripMenuItem.Text = "Search";
+            // 
+            // studentStatusToolStripMenuItem
+            // 
+            this.studentStatusToolStripMenuItem.Name = "studentStatusToolStripMenuItem";
+            this.studentStatusToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.studentStatusToolStripMenuItem.Text = "Student Status";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // label1
             // 
@@ -201,20 +215,6 @@
             this.label4.Text = "Misc";
             this.label4.Click += new System.EventHandler(this.label1_Click);
             // 
-            // searchToolStripMenuItem
-            // 
-            this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentStatusToolStripMenuItem});
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.searchToolStripMenuItem.Text = "Search";
-            // 
-            // studentStatusToolStripMenuItem
-            // 
-            this.studentStatusToolStripMenuItem.Name = "studentStatusToolStripMenuItem";
-            this.studentStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.studentStatusToolStripMenuItem.Text = "Student Status";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -244,6 +244,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Frm_Admin_Dashboard";
             this.Text = "Frm_Admin_Dashboard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Admin_Dashboard_FormClosing);
             this.Load += new System.EventHandler(this.Frm_Admin_Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).EndInit();
             this.statusStripBottom.ResumeLayout(false);

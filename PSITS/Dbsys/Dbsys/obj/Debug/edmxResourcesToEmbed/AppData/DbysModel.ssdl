@@ -6,9 +6,8 @@
     </Key>
     <Property Name="eventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="eventName" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="eventDate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="eventDate" Type="date" Nullable="false" />
     <Property Name="eventPrice" Type="int" Nullable="false" />
-    <Property Name="eventStatus" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Misc">
     <Key>
@@ -17,7 +16,17 @@
     <Property Name="miscId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="miscName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="miscPrice" Type="int" Nullable="false" />
-    <Property Name="miscStatus" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="paymentId" />
+    </Key>
+    <Property Name="paymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="50" />
+    <Property Name="userIdNumber" Type="varchar" MaxLength="50" />
+    <Property Name="yearLvl" Type="varchar" MaxLength="50" />
+    <Property Name="eventName" Type="varchar" MaxLength="50" />
+    <Property Name="eventPrice" Type="int" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -49,6 +58,13 @@
     <Property Name="userInfEmail" Type="varchar" MaxLength="1" Nullable="false" />
     <Property Name="userId" Type="int" />
   </EntityType>
+  <EntityType Name="YearLevel">
+    <Key>
+      <PropertyRef Name="yrId" />
+    </Key>
+    <Property Name="yrId" Type="int" Nullable="false" />
+    <Property Name="yrName" Type="varchar" MaxLength="50" />
+  </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'DBSYS.dbo.vw_all_user_role' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="vw_all_user_role">
@@ -74,12 +90,20 @@ warning 6002: The table/view 'DBSYS.dbo.vw_all_user_role' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="sp_newUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+    <Parameter Name="role" Type="int" Mode="In" />
+    <Parameter Name="createdBy" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="DBSYSModelStoreContainer">
     <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Misc" EntityType="Self.Misc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="payment" EntityType="Self.payment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserInformation" EntityType="Self.UserInformation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="YearLevel" EntityType="Self.YearLevel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="vw_all_user_role" EntityType="Self.vw_all_user_role" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
 [vw_all_user_role].[UserId] AS [UserId], 

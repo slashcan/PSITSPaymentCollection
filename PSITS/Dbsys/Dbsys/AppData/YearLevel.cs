@@ -15,14 +15,12 @@ namespace Dbsys.AppData
 using System;
     using System.Collections.Generic;
     
-public partial class Misc
+public partial class YearLevel
 {
 
-    public int miscId { get; set; }
+    public int yrId { get; set; }
 
-    public string miscName { get; set; }
-
-    public int miscPrice { get; set; }
+    public string yrName { get; set; }
 
 }
 

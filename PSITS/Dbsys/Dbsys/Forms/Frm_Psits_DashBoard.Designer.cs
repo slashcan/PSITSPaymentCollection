@@ -34,10 +34,11 @@
             this.createNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgvEvents = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
             this.checkStudentStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvEvents = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +67,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createNewToolStripMenuItem,
-            this.checkStudentStatusToolStripMenuItem});
+            this.checkStudentStatusToolStripMenuItem,
+            this.paymentToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -78,7 +80,7 @@
             this.eventToolStripMenuItem,
             this.miscToolStripMenuItem});
             this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createNewToolStripMenuItem.Text = "New";
             this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
             // 
@@ -95,6 +97,22 @@
             this.miscToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.miscToolStripMenuItem.Text = "Misc";
             this.miscToolStripMenuItem.Click += new System.EventHandler(this.miscToolStripMenuItem_Click);
+            // 
+            // checkStudentStatusToolStripMenuItem
+            // 
+            this.checkStudentStatusToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.studentStatusToolStripMenuItem});
+            this.checkStudentStatusToolStripMenuItem.Name = "checkStudentStatusToolStripMenuItem";
+            this.checkStudentStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkStudentStatusToolStripMenuItem.Text = "Search";
+            this.checkStudentStatusToolStripMenuItem.Click += new System.EventHandler(this.checkStudentStatusToolStripMenuItem_Click);
+            // 
+            // studentStatusToolStripMenuItem
+            // 
+            this.studentStatusToolStripMenuItem.Name = "studentStatusToolStripMenuItem";
+            this.studentStatusToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.studentStatusToolStripMenuItem.Text = "Student Status";
+            this.studentStatusToolStripMenuItem.Click += new System.EventHandler(this.studentStatusToolStripMenuItem_Click);
             // 
             // dgvEvents
             // 
@@ -114,21 +132,12 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Events";
             // 
-            // checkStudentStatusToolStripMenuItem
+            // paymentToolStripMenuItem
             // 
-            this.checkStudentStatusToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentStatusToolStripMenuItem});
-            this.checkStudentStatusToolStripMenuItem.Name = "checkStudentStatusToolStripMenuItem";
-            this.checkStudentStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.checkStudentStatusToolStripMenuItem.Text = "Search";
-            this.checkStudentStatusToolStripMenuItem.Click += new System.EventHandler(this.checkStudentStatusToolStripMenuItem_Click);
-            // 
-            // studentStatusToolStripMenuItem
-            // 
-            this.studentStatusToolStripMenuItem.Name = "studentStatusToolStripMenuItem";
-            this.studentStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.studentStatusToolStripMenuItem.Text = "Student Status";
-            this.studentStatusToolStripMenuItem.Click += new System.EventHandler(this.studentStatusToolStripMenuItem_Click);
+            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.paymentToolStripMenuItem.Text = "Receive Payment";
+            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
             // 
             // Frm_Psits_DashBoard
             // 
@@ -142,6 +151,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Frm_Psits_DashBoard";
             this.Text = "Frm_Psits_DashBoard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Psits_DashBoard_FormClosing);
+            this.Load += new System.EventHandler(this.Frm_Psits_DashBoard_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).EndInit();
@@ -162,5 +173,6 @@
         private System.Windows.Forms.DataGridView dgvEvents;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem studentStatusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
     }
 }

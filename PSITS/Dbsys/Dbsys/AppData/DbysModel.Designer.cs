@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\slash\OneDrive\Desktop\DbSys31-main\DbSys31-main\Dbsys\Dbsys\AppData\DbysModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\slash\OneDrive\Documents\GitHub\PSITSPaymentCollection\PSITS\Dbsys\Dbsys\AppData\DbysModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

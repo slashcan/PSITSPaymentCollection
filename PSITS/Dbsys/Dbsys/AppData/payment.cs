@@ -15,14 +15,20 @@ namespace Dbsys.AppData
 using System;
     using System.Collections.Generic;
     
-public partial class Misc
+public partial class payment
 {
 
-    public int miscId { get; set; }
+    public int paymentId { get; set; }
 
-    public string miscName { get; set; }
+    public string userName { get; set; }
 
-    public int miscPrice { get; set; }
+    public string userIdNumber { get; set; }
+
+    public string yearLvl { get; set; }
+
+    public string eventName { get; set; }
+
+    public Nullable<int> eventPrice { get; set; }
 
 }
 

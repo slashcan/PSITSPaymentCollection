@@ -32,10 +32,10 @@
             this.eventTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.priceTxt = new System.Windows.Forms.TextBox();
             this.addEventButton = new System.Windows.Forms.Button();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +50,7 @@
             // 
             // eventTxt
             // 
-            this.eventTxt.Location = new System.Drawing.Point(147, 82);
+            this.eventTxt.Location = new System.Drawing.Point(111, 81);
             this.eventTxt.Name = "eventTxt";
             this.eventTxt.Size = new System.Drawing.Size(100, 20);
             this.eventTxt.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(53, 82);
+            this.label2.Location = new System.Drawing.Point(17, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 16);
             this.label2.TabIndex = 0;
@@ -69,24 +69,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(53, 123);
+            this.label3.Location = new System.Drawing.Point(17, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Date:";
             // 
-            // dateTxt
-            // 
-            this.dateTxt.Location = new System.Drawing.Point(147, 123);
-            this.dateTxt.Name = "dateTxt";
-            this.dateTxt.Size = new System.Drawing.Size(100, 20);
-            this.dateTxt.TabIndex = 1;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(53, 162);
+            this.label4.Location = new System.Drawing.Point(17, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 0;
@@ -94,7 +87,7 @@
             // 
             // priceTxt
             // 
-            this.priceTxt.Location = new System.Drawing.Point(147, 162);
+            this.priceTxt.Location = new System.Drawing.Point(111, 161);
             this.priceTxt.Name = "priceTxt";
             this.priceTxt.Size = new System.Drawing.Size(100, 20);
             this.priceTxt.TabIndex = 1;
@@ -107,16 +100,24 @@
             this.addEventButton.TabIndex = 2;
             this.addEventButton.Text = "Add";
             this.addEventButton.UseVisualStyleBackColor = true;
+            this.addEventButton.Click += new System.EventHandler(this.addEventButton_Click);
+            // 
+            // datePicker
+            // 
+            this.datePicker.Location = new System.Drawing.Point(111, 122);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(200, 20);
+            this.datePicker.TabIndex = 3;
             // 
             // Frm_Add_Event
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(323, 301);
+            this.Controls.Add(this.datePicker);
             this.Controls.Add(this.addEventButton);
             this.Controls.Add(this.priceTxt);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTxt);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.eventTxt);
             this.Controls.Add(this.label2);
@@ -135,9 +136,9 @@
         private System.Windows.Forms.TextBox eventTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox dateTxt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox priceTxt;
         private System.Windows.Forms.Button addEventButton;
+        private System.Windows.Forms.DateTimePicker datePicker;
     }
 }

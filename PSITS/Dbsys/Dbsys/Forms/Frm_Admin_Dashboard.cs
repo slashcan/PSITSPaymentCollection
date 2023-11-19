@@ -42,5 +42,10 @@ namespace Dbsys.Forms
         {
 
         }
+
+        private void Frm_Admin_Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

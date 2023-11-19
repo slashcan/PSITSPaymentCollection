@@ -16,8 +16,16 @@
       <End Role="UserAccount" EntitySet="UserAccount" />
       <End Role="UserInformation" EntitySet="UserInformation" />
     </AssociationSet>
-    <EntitySet Name="Events" EntityType="DBSYSModel.Events" />
     <EntitySet Name="Misc" EntityType="DBSYSModel.Misc" />
+    <FunctionImport Name="sp_newUser">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="role" Mode="In" Type="Int32" />
+      <Parameter Name="createdBy" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="payment" EntityType="DBSYSModel.payment" />
+    <EntitySet Name="YearLevel" EntityType="DBSYSModel.YearLevel" />
+    <EntitySet Name="Events" EntityType="DBSYSModel.Events" />
   </EntityContainer>
   <EntityType Name="Role">
     <Key>
@@ -74,16 +82,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="Events">
-    <Key>
-      <PropertyRef Name="eventId" />
-    </Key>
-    <Property Name="eventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="eventName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="eventDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="eventPrice" Type="Int32" Nullable="false" />
-    <Property Name="eventStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityType Name="Misc">
     <Key>
       <PropertyRef Name="miscId" />
@@ -91,6 +89,32 @@
     <Property Name="miscId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="miscName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="miscPrice" Type="Int32" Nullable="false" />
-    <Property Name="miscStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="paymentId" />
+    </Key>
+    <Property Name="paymentId" Type="Int32" Nullable="false" />
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userIdNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yearLvl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="eventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="eventPrice" Type="Int32" />
+  </EntityType>
+  <EntityType Name="YearLevel">
+    <Key>
+      <PropertyRef Name="yrId" />
+    </Key>
+    <Property Name="yrId" Type="Int32" Nullable="false" />
+    <Property Name="yrName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="eventId" />
+    </Key>
+    <Property Name="eventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eventName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="eventDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="eventPrice" Type="Int32" Nullable="false" />
   </EntityType>
 </Schema>

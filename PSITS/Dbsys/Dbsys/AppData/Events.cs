@@ -22,11 +22,9 @@ public partial class Events
 
     public string eventName { get; set; }
 
-    public string eventDate { get; set; }
+    public System.DateTime eventDate { get; set; }
 
     public int eventPrice { get; set; }
-
-    public string eventStatus { get; set; }
 
 }
 

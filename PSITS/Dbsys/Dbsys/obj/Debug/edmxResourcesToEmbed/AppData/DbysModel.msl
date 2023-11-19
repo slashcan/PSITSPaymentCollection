@@ -44,24 +44,43 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Misc">
+      <EntityTypeMapping TypeName="DBSYSModel.Misc">
+        <MappingFragment StoreEntitySet="Misc">
+          <ScalarProperty Name="miscPrice" ColumnName="miscPrice" />
+          <ScalarProperty Name="miscName" ColumnName="miscName" />
+          <ScalarProperty Name="miscId" ColumnName="miscId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_newUser" FunctionName="DBSYSModel.Store.sp_newUser" />
+    <EntitySetMapping Name="payment">
+      <EntityTypeMapping TypeName="DBSYSModel.payment">
+        <MappingFragment StoreEntitySet="payment">
+          <ScalarProperty Name="eventPrice" ColumnName="eventPrice" />
+          <ScalarProperty Name="eventName" ColumnName="eventName" />
+          <ScalarProperty Name="yearLvl" ColumnName="yearLvl" />
+          <ScalarProperty Name="userIdNumber" ColumnName="userIdNumber" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="paymentId" ColumnName="paymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YearLevel">
+      <EntityTypeMapping TypeName="DBSYSModel.YearLevel">
+        <MappingFragment StoreEntitySet="YearLevel">
+          <ScalarProperty Name="yrName" ColumnName="yrName" />
+          <ScalarProperty Name="yrId" ColumnName="yrId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Events">
       <EntityTypeMapping TypeName="DBSYSModel.Events">
         <MappingFragment StoreEntitySet="Events">
-          <ScalarProperty Name="eventStatus" ColumnName="eventStatus" />
           <ScalarProperty Name="eventPrice" ColumnName="eventPrice" />
           <ScalarProperty Name="eventDate" ColumnName="eventDate" />
           <ScalarProperty Name="eventName" ColumnName="eventName" />
           <ScalarProperty Name="eventId" ColumnName="eventId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Misc">
-      <EntityTypeMapping TypeName="DBSYSModel.Misc">
-        <MappingFragment StoreEntitySet="Misc">
-          <ScalarProperty Name="miscStatus" ColumnName="miscStatus" />
-          <ScalarProperty Name="miscPrice" ColumnName="miscPrice" />
-          <ScalarProperty Name="miscName" ColumnName="miscName" />
-          <ScalarProperty Name="miscId" ColumnName="miscId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

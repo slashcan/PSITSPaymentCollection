@@ -44,9 +44,13 @@ public partial class DBSYSEntities : DbContext
 
     public DbSet<vw_all_user_role> vw_all_user_role { get; set; }
 
-    public DbSet<Events> Events { get; set; }
-
     public DbSet<Misc> Misc { get; set; }
+
+    public DbSet<payment> payment { get; set; }
+
+    public DbSet<YearLevel> YearLevel { get; set; }
+
+    public DbSet<Events> Events { get; set; }
 
 
     public virtual int sp_CreateUser(string username, string password, Nullable<int> role, string status, Nullable<int> createdBy)
@@ -78,6 +82,33 @@ public partial class DBSYSEntities : DbContext
 
 
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_CreateUser", usernameParameter, passwordParameter, roleParameter, statusParameter, createdByParameter);
+    }
+
+
+    public virtual int sp_newUser(string username, string password, Nullable<int> role, Nullable<int> createdBy)
+    {
+
+        var usernameParameter = username != null ?
+            new ObjectParameter("username", username) :
+            new ObjectParameter("username", typeof(string));
+
+
+        var passwordParameter = password != null ?
+            new ObjectParameter("password", password) :
+            new ObjectParameter("password", typeof(string));
+
+
+        var roleParameter = role.HasValue ?
+            new ObjectParameter("role", role) :
+            new ObjectParameter("role", typeof(int));
+
+
+        var createdByParameter = createdBy.HasValue ?
+            new ObjectParameter("createdBy", createdBy) :
+            new ObjectParameter("createdBy", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_newUser", usernameParameter, passwordParameter, roleParameter, createdByParameter);
     }
 
 }

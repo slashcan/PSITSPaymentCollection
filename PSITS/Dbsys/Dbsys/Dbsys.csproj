@@ -76,6 +76,9 @@
     <Compile Include="AppData\Misc.cs">
       <DependentUpon>DbysModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppData\payment.cs">
+      <DependentUpon>DbysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\Role.cs">
       <DependentUpon>DbysModel.tt</DependentUpon>
     </Compile>
@@ -86,6 +89,9 @@
       <DependentUpon>DbysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\vw_all_user_role.cs">
+      <DependentUpon>DbysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\YearLevel.cs">
       <DependentUpon>DbysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Add_Event.cs">
@@ -106,11 +112,11 @@
     <Compile Include="Forms\Frm_Admin_Dashboard.Designer.cs">
       <DependentUpon>Frm_Admin_Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Payment_Form_Student.cs">
+    <Compile Include="Forms\Frm_Receive_Payment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Payment_Form_Student.Designer.cs">
-      <DependentUpon>Frm_Payment_Form_Student.cs</DependentUpon>
+    <Compile Include="Forms\Frm_Receive_Payment.Designer.cs">
+      <DependentUpon>Frm_Receive_Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Register.cs">
       <SubType>Form</SubType>
@@ -163,11 +169,11 @@
     <EmbeddedResource Include="Forms\Frm_Admin_Dashboard.resx">
       <DependentUpon>Frm_Admin_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Payment_Form_Student.resx">
-      <DependentUpon>Frm_Payment_Form_Student.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Psits_DashBoard.resx">
       <DependentUpon>Frm_Psits_DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Receive_Payment.resx">
+      <DependentUpon>Frm_Receive_Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Register.resx">
       <DependentUpon>Frm_Register.cs</DependentUpon>
