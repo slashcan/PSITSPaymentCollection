@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Dbsys.Forms
 {
+
     public partial class Frm_Student_Dashboard : Form
     {
         UserRepository userRepo;
@@ -25,7 +26,7 @@ namespace Dbsys.Forms
             loadMisc();
         }
 
-        private void loadEvents()
+        public void loadEvents()
         {
             dgvEvents.DataSource = userRepo.ShowEvents();
         }

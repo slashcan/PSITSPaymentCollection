@@ -12,9 +12,24 @@ namespace Dbsys.Forms
 {
     public partial class Frm_Psits_DashBoard : Form
     {
+        UserRepository userRepo;
+
         public Frm_Psits_DashBoard()
         {
+            userRepo = new UserRepository();
             InitializeComponent();
+            loadEvents();
+            loadMisc();
+        }
+
+        public void loadEvents()
+        {
+            dgvEvents.DataSource = userRepo.ShowEvents();
+        }
+
+        private void loadMisc()
+        {
+            dgvMisc.DataSource = userRepo.ShowMisc();
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,6 +75,11 @@ namespace Dbsys.Forms
         private void Frm_Psits_DashBoard_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

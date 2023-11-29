@@ -12,8 +12,8 @@
         <AssociationConnector Association="DBSYSModel.FK__UserInfor__userI__1BFD2C07" />
         <EntityTypeShape EntityType="DBSYSModel.Misc" Width="1.5" PointX="5.375" PointY="3.75" />
         <EntityTypeShape EntityType="DBSYSModel.payment" Width="1.5" PointX="7.875" PointY="3" />
-        <EntityTypeShape EntityType="DBSYSModel.YearLevel" Width="1.5" PointX="5.375" PointY="6.75" />
-        <EntityTypeShape EntityType="DBSYSModel.Events" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DBSYSModel.YearLevel" Width="1.5" PointX="5" PointY="1.5" />
+        <EntityTypeShape EntityType="DBSYSModel.Events" Width="1.5" PointX="7.25" PointY="5.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -45,6 +45,8 @@
     <Property Name="userPassword" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="userStatus" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="roleId" Type="int" />
+    <Property Name="idNumber" Type="int" />
+    <Property Name="yearLvl" Type="int" />
     <Property Name="createdBy" Type="int" />
   </EntityType>
   <EntityType Name="UserInformation">

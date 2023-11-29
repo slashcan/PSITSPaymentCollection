@@ -47,5 +47,20 @@ namespace Dbsys.Forms
         {
             Application.Exit();
         }
+
+        private void eventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Frm_Add_Event().Show();
+        }
+
+        private void miscToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Frm_Add_Misc().Show();
+        }
+
+        private void studentStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Frm_Student_Status().Show();
+        }
     }
 }

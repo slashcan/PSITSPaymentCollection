@@ -38,6 +38,10 @@ public partial class UserAccount
 
     public Nullable<int> createdBy { get; set; }
 
+    public Nullable<int> idNumber { get; set; }
+
+    public Nullable<int> yearLvl { get; set; }
+
 
 
     public virtual ICollection<UserInformation> UserInformation { get; set; }

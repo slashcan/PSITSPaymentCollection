@@ -25,10 +25,25 @@ namespace Dbsys.Forms
         private void Frm_Register_Load(object sender, EventArgs e)
         {
             loadCbBoxRole();
+            yrLevel();
         }
 
         private void cbBoxRole_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cbBoxRole.Text.Equals("Student"))
+            {
+                yearlvltxt.Visible= true;
+                idnumbertxt.Visible = true;
+                idnumtxtbox.Visible = true;
+                cbBoxYearLevel.Visible = true;
+            }
+            else
+            {
+                yearlvltxt.Visible = false;
+                idnumbertxt.Visible = false;
+                idnumtxtbox.Visible = false;
+                cbBoxYearLevel.Visible = false;
+            }
 
         }
 
@@ -41,6 +56,17 @@ namespace Dbsys.Forms
             cbBoxRole.DisplayMember = "roleName";
             cbBoxRole.DataSource = roles;
           
+        }
+
+        public void yrLevel()
+        {
+            // SELECT * FROM yearLvl
+            var yearlvl = db.YearLevel.ToList();
+
+            cbBoxYearLevel.ValueMember = "yrId";
+            cbBoxYearLevel.DisplayMember = "yrName";
+            cbBoxYearLevel.DataSource = yearlvl;
+
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -82,6 +108,8 @@ namespace Dbsys.Forms
             nUserAccount.userPassword = txtPassword.Text;
             nUserAccount.roleId = (Int32)cbBoxRole.SelectedValue;
             nUserAccount.userStatus = "Active";
+            nUserAccount.idNumber = int.Parse(idnumtxtbox.Text);
+            nUserAccount.yearLvl = (Int32)cbBoxYearLevel.SelectedValue;
 
             username = txtUsername.Text;
 
@@ -91,7 +119,27 @@ namespace Dbsys.Forms
             txtPassword.Clear();
             txtRepassword.Clear();
             txtUsername.Clear();
+            idnumtxtbox.Clear();
             MessageBox.Show("Registered!");
+        }
+
+        private void cbBoxRole_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbBoxRole.DisplayMember.Equals("Student"))
+            {
+                idnumbertxt.Visible = true;
+                idnumtxtbox.Visible = true;
+                cbBoxYearLevel.Visible = true;
+                
+
+            }
+            else
+            {
+                idnumbertxt.Visible = false;
+                idnumtxtbox.Visible = false;
+                cbBoxYearLevel.Visible = false;
+
+            }
         }
     }
 }

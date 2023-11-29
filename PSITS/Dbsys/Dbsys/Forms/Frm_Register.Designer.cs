@@ -39,6 +39,10 @@
             this.txtRepassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.idnumbertxt = new System.Windows.Forms.Label();
+            this.idnumtxtbox = new System.Windows.Forms.TextBox();
+            this.yearlvltxt = new System.Windows.Forms.Label();
+            this.cbBoxYearLevel = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +81,7 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(27, 204);
+            this.btnRegister.Location = new System.Drawing.Point(27, 298);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(203, 23);
             this.btnRegister.TabIndex = 16;
@@ -93,6 +97,7 @@
             this.cbBoxRole.Size = new System.Drawing.Size(201, 21);
             this.cbBoxRole.TabIndex = 17;
             this.cbBoxRole.SelectedIndexChanged += new System.EventHandler(this.cbBoxRole_SelectedIndexChanged);
+            this.cbBoxRole.SelectedValueChanged += new System.EventHandler(this.cbBoxRole_SelectedValueChanged);
             // 
             // label3
             // 
@@ -124,11 +129,49 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // idnumbertxt
+            // 
+            this.idnumbertxt.AutoSize = true;
+            this.idnumbertxt.Location = new System.Drawing.Point(24, 185);
+            this.idnumbertxt.Name = "idnumbertxt";
+            this.idnumbertxt.Size = new System.Drawing.Size(58, 13);
+            this.idnumbertxt.TabIndex = 12;
+            this.idnumbertxt.Text = "ID Number";
+            this.idnumbertxt.Visible = false;
+            // 
+            // idnumtxtbox
+            // 
+            this.idnumtxtbox.Location = new System.Drawing.Point(27, 201);
+            this.idnumtxtbox.Name = "idnumtxtbox";
+            this.idnumtxtbox.Size = new System.Drawing.Size(203, 20);
+            this.idnumtxtbox.TabIndex = 13;
+            this.idnumtxtbox.Visible = false;
+            // 
+            // yearlvltxt
+            // 
+            this.yearlvltxt.AutoSize = true;
+            this.yearlvltxt.Location = new System.Drawing.Point(24, 235);
+            this.yearlvltxt.Name = "yearlvltxt";
+            this.yearlvltxt.Size = new System.Drawing.Size(46, 13);
+            this.yearlvltxt.TabIndex = 12;
+            this.yearlvltxt.Text = "Year Lvl";
+            this.yearlvltxt.Visible = false;
+            // 
+            // cbBoxYearLevel
+            // 
+            this.cbBoxYearLevel.FormattingEnabled = true;
+            this.cbBoxYearLevel.Location = new System.Drawing.Point(27, 251);
+            this.cbBoxYearLevel.Name = "cbBoxYearLevel";
+            this.cbBoxYearLevel.Size = new System.Drawing.Size(203, 21);
+            this.cbBoxYearLevel.TabIndex = 21;
+            this.cbBoxYearLevel.Visible = false;
+            // 
             // Frm_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 286);
+            this.ClientSize = new System.Drawing.Size(254, 356);
+            this.Controls.Add(this.cbBoxYearLevel);
             this.Controls.Add(this.txtRepassword);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -136,6 +179,9 @@
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.yearlvltxt);
+            this.Controls.Add(this.idnumtxtbox);
+            this.Controls.Add(this.idnumbertxt);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
             this.Name = "Frm_Register";
@@ -159,5 +205,9 @@
         private System.Windows.Forms.TextBox txtRepassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox cbBoxYearLevel;
+        private System.Windows.Forms.Label yearlvltxt;
+        private System.Windows.Forms.TextBox idnumtxtbox;
+        private System.Windows.Forms.Label idnumbertxt;
     }
 }

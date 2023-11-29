@@ -13,6 +13,8 @@
     <EntitySetMapping Name="UserAccount">
       <EntityTypeMapping TypeName="DBSYSModel.UserAccount">
         <MappingFragment StoreEntitySet="UserAccount">
+          <ScalarProperty Name="yearLvl" ColumnName="yearLvl" />
+          <ScalarProperty Name="idNumber" ColumnName="idNumber" />
           <ScalarProperty Name="createdBy" ColumnName="createdBy" />
           <ScalarProperty Name="roleId" ColumnName="roleId" />
           <ScalarProperty Name="userStatus" ColumnName="userStatus" />

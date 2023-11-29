@@ -105,5 +105,10 @@ namespace Dbsys.Forms
         {
             
         }
+
+        private void txtuserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

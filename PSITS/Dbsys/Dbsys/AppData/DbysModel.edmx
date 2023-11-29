@@ -50,6 +50,8 @@
           <Property Name="userPassword" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="userStatus" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="roleId" Type="int" />
+          <Property Name="idNumber" Type="int" />
+          <Property Name="yearLvl" Type="int" />
           <Property Name="createdBy" Type="int" />
         </EntityType>
         <EntityType Name="UserInformation">
@@ -172,6 +174,8 @@ FROM [dbo].[vw_all_user_role] AS [vw_all_user_role]</DefiningQuery>
           <Property Name="roleId" Type="Int32" />
           <Property Name="createdBy" Type="Int32" />
           <NavigationProperty Name="UserInformation" Relationship="DBSYSModel.FK__UserInfor__userI__1BFD2C07" FromRole="UserAccount" ToRole="UserInformation" />
+          <Property Name="idNumber" Type="Int32" />
+          <Property Name="yearLvl" Type="Int32" />
         </EntityType>
         <EntityType Name="UserInformation">
           <Key>
@@ -261,6 +265,8 @@ FROM [dbo].[vw_all_user_role] AS [vw_all_user_role]</DefiningQuery>
           <EntitySetMapping Name="UserAccount">
             <EntityTypeMapping TypeName="DBSYSModel.UserAccount">
               <MappingFragment StoreEntitySet="UserAccount">
+                <ScalarProperty Name="yearLvl" ColumnName="yearLvl" />
+                <ScalarProperty Name="idNumber" ColumnName="idNumber" />
                 <ScalarProperty Name="createdBy" ColumnName="createdBy" />
                 <ScalarProperty Name="roleId" ColumnName="roleId" />
                 <ScalarProperty Name="userStatus" ColumnName="userStatus" />
