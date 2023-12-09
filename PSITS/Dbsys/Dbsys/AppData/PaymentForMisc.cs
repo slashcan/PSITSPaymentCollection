@@ -15,7 +15,7 @@ namespace Dbsys.AppData
 using System;
     using System.Collections.Generic;
     
-public partial class payment
+public partial class PaymentForMisc
 {
 
     public int paymentId { get; set; }
@@ -26,11 +26,11 @@ public partial class payment
 
     public string yearLvl { get; set; }
 
-    public string paymentFor { get; set; }
+    public string miscName { get; set; }
 
-    public Nullable<System.DateTime> paymentDate { get; set; }
+    public Nullable<System.DateTime> paymentdate { get; set; }
 
-    public Nullable<int> eventPrice { get; set; }
+    public Nullable<int> miscPrice { get; set; }
 
 }
 

@@ -25,8 +25,33 @@
     <Property Name="userName" Type="varchar" MaxLength="50" />
     <Property Name="userIdNumber" Type="varchar" MaxLength="50" />
     <Property Name="yearLvl" Type="varchar" MaxLength="50" />
-    <Property Name="eventName" Type="varchar" MaxLength="50" />
+    <Property Name="paymentFor" Type="varchar" MaxLength="50" />
+    <Property Name="paymentDate" Type="date" />
     <Property Name="eventPrice" Type="int" />
+  </EntityType>
+  <EntityType Name="PaymentForEvent">
+    <Key>
+      <PropertyRef Name="paymentId" />
+    </Key>
+    <Property Name="paymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="50" />
+    <Property Name="userIdNumber" Type="varchar" MaxLength="50" />
+    <Property Name="yearLvl" Type="varchar" MaxLength="50" />
+    <Property Name="eventName" Type="varchar" MaxLength="50" />
+    <Property Name="paymentDate" Type="date" />
+    <Property Name="eventPrice" Type="int" />
+  </EntityType>
+  <EntityType Name="PaymentForMisc">
+    <Key>
+      <PropertyRef Name="paymentId" />
+    </Key>
+    <Property Name="paymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="50" />
+    <Property Name="userIdNumber" Type="varchar" MaxLength="50" />
+    <Property Name="yearLvl" Type="varchar" MaxLength="50" />
+    <Property Name="miscName" Type="varchar" MaxLength="50" />
+    <Property Name="paymentdate" Type="date" />
+    <Property Name="miscPrice" Type="int" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -112,6 +137,8 @@ warning 6002: The table/view 'DBSYS.dbo.vw_total_event_sales' does not have a pr
     <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Misc" EntityType="Self.Misc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="payment" EntityType="Self.payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentForEvent" EntityType="Self.PaymentForEvent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentForMisc" EntityType="Self.PaymentForMisc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserInformation" EntityType="Self.UserInformation" Schema="dbo" store:Type="Tables" />

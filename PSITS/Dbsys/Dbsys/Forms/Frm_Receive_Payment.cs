@@ -54,29 +54,78 @@ namespace Dbsys.Forms
 
             // find the user id
             // code input equal db. useraccoutn code
-            payment newpayment = new payment();
-            newpayment.userName = txtuserName.Text;
-            newpayment.userIdNumber = txtidNumber.Text;
-            newpayment.yearLvl = cbboxYrLvl.Text;
-            newpayment.eventName = cbboxEvent.Text;
-            newpayment.eventPrice = Convert.ToInt32(txtAmount.Text);         
+
+            if(eventRadio.Checked)
+            {
+                PaymentForEvent newpayment = new PaymentForEvent();                     
+                    newpayment.userName = txtuserName.Text;
+                    newpayment.userIdNumber = txtidNumber.Text;
+                    newpayment.yearLvl = cbboxYrLvl.Text;
+                    newpayment.eventName = cbboxEvent.Text;
+                    newpayment.paymentDate = paymentDay.Value;
+                    newpayment.eventPrice = Convert.ToInt32(txtAmount.Text);
+                db.PaymentForEvent.Add(newpayment);         
+
+                payment overallpayment = new payment();
+
+                    overallpayment.userName = txtuserName.Text;
+                    overallpayment.userIdNumber = txtidNumber.Text;
+                    overallpayment.yearLvl = cbboxYrLvl.Text;
+                    overallpayment.paymentFor = cbboxEvent.Text;
+                    overallpayment.paymentDate = paymentDay.Value;
+                    overallpayment.eventPrice = Convert.ToInt32(txtAmount.Text);
+                db.payment.Add(overallpayment);
+                db.SaveChanges();
 
 
-            db.payment.Add(newpayment);
-            db.SaveChanges();
+                txtuserName.Clear();
+                txtidNumber.Clear();
 
-            txtuserName.Clear();
-            txtidNumber.Clear();
-     
-            txtAmount.Clear();
+                txtAmount.Clear();
 
-            MessageBox.Show("Registered!");
+                MessageBox.Show("Registered!");
+            }
+            else
+            {
+                PaymentForMisc newpayment = new PaymentForMisc();
+                newpayment.userName = txtuserName.Text;
+                newpayment.userIdNumber = txtidNumber.Text;
+                newpayment.yearLvl = cbboxYrLvl.Text;
+                newpayment.miscName = cbboxMisc.Text;
+                newpayment.paymentdate = paymentDay.Value;
+                newpayment.miscPrice = Convert.ToInt32(txtAmount.Text);
+                db.PaymentForMisc.Add(newpayment);
+
+                payment overallpayment = new payment();
+
+                overallpayment.userName = txtuserName.Text;
+                overallpayment.userIdNumber = txtidNumber.Text;
+                overallpayment.yearLvl = cbboxYrLvl.Text;
+                overallpayment.paymentFor = cbboxMisc.Text;
+                overallpayment.paymentDate = paymentDay.Value;
+                overallpayment.eventPrice = Convert.ToInt32(txtAmount.Text);
+                db.payment.Add(overallpayment);
+                db.SaveChanges();
+
+
+                txtuserName.Clear();
+                txtidNumber.Clear();
+
+                txtAmount.Clear();
+
+                MessageBox.Show("Registered!");
+
+            }
+
+
+
+
         }
 
         private void Frm_Receive_Payment_Load(object sender, EventArgs e)
         {
             loadCbBoxYearLevel();
-            loadCbBoxEvent();
+           // loadCbBoxEvent();
         }
 
         public void loadCbBoxYearLevel()
@@ -92,13 +141,24 @@ namespace Dbsys.Forms
 
         public void loadCbBoxEvent()
         {
-           
-            var events = db.Events.ToList();
 
-            cbboxEvent.ValueMember = "yrId";
-            cbboxEvent.DisplayMember = "eventName";
-            cbboxEvent.DataSource = events;
+            if(eventRadio.Checked)
+            {
+                var events = db.Events.ToList();
 
+                cbboxEvent.ValueMember = "yrId";
+                cbboxEvent.DisplayMember = "eventName";
+                cbboxEvent.DataSource = events;
+            }
+
+            else
+            {
+                var events2 = db.Misc.ToList();
+
+                cbboxEvent.ValueMember = "miscId";
+                cbboxEvent.DisplayMember = "miscName";
+                cbboxEvent.DataSource = events2;
+            }
         }
 
         private void cbboxEvent_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,6 +169,28 @@ namespace Dbsys.Forms
         private void txtuserName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void eventRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            cbboxEvent.Visible= true;
+            cbboxMisc.Visible = false;
+            var events = db.Events.ToList();
+
+            cbboxEvent.ValueMember = "yrId";
+            cbboxEvent.DisplayMember = "eventName";
+            cbboxEvent.DataSource = events;
+        }
+
+        private void miscRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            cbboxEvent.Visible = false;
+            cbboxMisc.Visible = true;
+            var events2 = db.Misc.ToList();
+
+            cbboxMisc.ValueMember = "miscId";
+            cbboxMisc.DisplayMember = "miscName";
+            cbboxMisc.DataSource = events2;
         }
     }
 }

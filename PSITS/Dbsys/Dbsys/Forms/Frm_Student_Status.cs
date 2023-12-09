@@ -57,7 +57,7 @@ namespace Dbsys.Forms
                     .Where(p => p.userName.Contains(searchTxt.Text) ||
                                 p.userIdNumber.Contains(searchTxt.Text) ||
                                 p.yearLvl.Contains(searchTxt.Text) ||
-                                p.eventName.Contains(searchTxt.Text))
+                                p.paymentFor.Contains(searchTxt.Text))
                     .ToList();
 
                 // Display the combined results in the DataGridView
@@ -74,6 +74,11 @@ namespace Dbsys.Forms
         private void eventsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Frm_Total_Sales_Events().Show();    
+        }
+
+        private void miscToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Frm_Total_Sales_Misc().Show();  
         }
     }
 }

@@ -95,7 +95,7 @@
             this.eventsToolStripMenuItem,
             this.miscToolStripMenuItem});
             this.totalSalesForToolStripMenuItem.Name = "totalSalesForToolStripMenuItem";
-            this.totalSalesForToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.totalSalesForToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.totalSalesForToolStripMenuItem.Text = "Total Sales for..";
             // 
             // eventsToolStripMenuItem
@@ -110,6 +110,7 @@
             this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
             this.miscToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.miscToolStripMenuItem.Text = "Misc";
+            this.miscToolStripMenuItem.Click += new System.EventHandler(this.miscToolStripMenuItem_Click);
             // 
             // studentSearchToolStripMenuItem
             // 

@@ -30,8 +30,33 @@
           <Property Name="userName" Type="varchar" MaxLength="50" />
           <Property Name="userIdNumber" Type="varchar" MaxLength="50" />
           <Property Name="yearLvl" Type="varchar" MaxLength="50" />
-          <Property Name="eventName" Type="varchar" MaxLength="50" />
+          <Property Name="paymentFor" Type="varchar" MaxLength="50" />
+          <Property Name="paymentDate" Type="date" />
           <Property Name="eventPrice" Type="int" />
+        </EntityType>
+        <EntityType Name="PaymentForEvent">
+          <Key>
+            <PropertyRef Name="paymentId" />
+          </Key>
+          <Property Name="paymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="50" />
+          <Property Name="userIdNumber" Type="varchar" MaxLength="50" />
+          <Property Name="yearLvl" Type="varchar" MaxLength="50" />
+          <Property Name="eventName" Type="varchar" MaxLength="50" />
+          <Property Name="paymentDate" Type="date" />
+          <Property Name="eventPrice" Type="int" />
+        </EntityType>
+        <EntityType Name="PaymentForMisc">
+          <Key>
+            <PropertyRef Name="paymentId" />
+          </Key>
+          <Property Name="paymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="50" />
+          <Property Name="userIdNumber" Type="varchar" MaxLength="50" />
+          <Property Name="yearLvl" Type="varchar" MaxLength="50" />
+          <Property Name="miscName" Type="varchar" MaxLength="50" />
+          <Property Name="paymentdate" Type="date" />
+          <Property Name="miscPrice" Type="int" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -117,6 +142,8 @@ warning 6002: The table/view 'DBSYS.dbo.vw_total_event_sales' does not have a pr
           <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Misc" EntityType="Self.Misc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="payment" EntityType="Self.payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentForEvent" EntityType="Self.PaymentForEvent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentForMisc" EntityType="Self.PaymentForMisc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserInformation" EntityType="Self.UserInformation" Schema="dbo" store:Type="Tables" />
@@ -168,10 +195,12 @@ FROM [dbo].[vw_total_event_sales] AS [vw_total_event_sales]</DefiningQuery>
             <Parameter Name="role" Mode="In" Type="Int32" />
             <Parameter Name="createdBy" Mode="In" Type="Int32" />
           </FunctionImport>
-          <EntitySet Name="payment" EntityType="DBSYSModel.payment" />
           <EntitySet Name="YearLevel" EntityType="DBSYSModel.YearLevel" />
           <EntitySet Name="Events" EntityType="DBSYSModel.Events" />
           <EntitySet Name="vw_total_event_sales" EntityType="DBSYSModel.vw_total_event_sales" />
+          <EntitySet Name="PaymentForEvent" EntityType="DBSYSModel.PaymentForEvent" />
+          <EntitySet Name="PaymentForMisc" EntityType="DBSYSModel.PaymentForMisc" />
+          <EntitySet Name="payment" EntityType="DBSYSModel.payment" />
         </EntityContainer>
         <EntityType Name="Role">
           <Key>
@@ -238,17 +267,6 @@ FROM [dbo].[vw_total_event_sales] AS [vw_total_event_sales]</DefiningQuery>
           <Property Name="miscName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="miscPrice" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="payment">
-          <Key>
-            <PropertyRef Name="paymentId" />
-          </Key>
-          <Property Name="paymentId" Type="Int32" Nullable="false" />
-          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="userIdNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="yearLvl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="eventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="eventPrice" Type="Int32" />
-        </EntityType>
         <EntityType Name="YearLevel">
           <Key>
             <PropertyRef Name="yrId" />
@@ -272,6 +290,42 @@ FROM [dbo].[vw_total_event_sales] AS [vw_total_event_sales]</DefiningQuery>
           <Property Name="eventId" Type="Int32" Nullable="false" />
           <Property Name="eventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Total_Sales" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PaymentForEvent">
+          <Key>
+            <PropertyRef Name="paymentId" />
+          </Key>
+          <Property Name="paymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userIdNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="yearLvl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="eventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="eventPrice" Type="Int32" />
+          <Property Name="paymentDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="PaymentForMisc">
+          <Key>
+            <PropertyRef Name="paymentId" />
+          </Key>
+          <Property Name="paymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userIdNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="yearLvl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="miscName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paymentdate" Type="DateTime" Precision="0" />
+          <Property Name="miscPrice" Type="Int32" />
+        </EntityType>
+        <EntityType Name="payment">
+          <Key>
+            <PropertyRef Name="paymentId" />
+          </Key>
+          <Property Name="paymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userIdNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="yearLvl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paymentFor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paymentDate" Type="DateTime" Precision="0" />
+          <Property Name="eventPrice" Type="Int32" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -334,18 +388,6 @@ FROM [dbo].[vw_total_event_sales] AS [vw_total_event_sales]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="sp_newUser" FunctionName="DBSYSModel.Store.sp_newUser" />
-          <EntitySetMapping Name="payment">
-            <EntityTypeMapping TypeName="DBSYSModel.payment">
-              <MappingFragment StoreEntitySet="payment">
-                <ScalarProperty Name="eventPrice" ColumnName="eventPrice" />
-                <ScalarProperty Name="eventName" ColumnName="eventName" />
-                <ScalarProperty Name="yearLvl" ColumnName="yearLvl" />
-                <ScalarProperty Name="userIdNumber" ColumnName="userIdNumber" />
-                <ScalarProperty Name="userName" ColumnName="userName" />
-                <ScalarProperty Name="paymentId" ColumnName="paymentId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="YearLevel">
             <EntityTypeMapping TypeName="DBSYSModel.YearLevel">
               <MappingFragment StoreEntitySet="YearLevel">
@@ -370,6 +412,45 @@ FROM [dbo].[vw_total_event_sales] AS [vw_total_event_sales]</DefiningQuery>
                 <ScalarProperty Name="Total_Sales" ColumnName="Total Sales" />
                 <ScalarProperty Name="eventName" ColumnName="eventName" />
                 <ScalarProperty Name="eventId" ColumnName="eventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentForEvent">
+            <EntityTypeMapping TypeName="DBSYSModel.PaymentForEvent">
+              <MappingFragment StoreEntitySet="PaymentForEvent">
+                <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
+                <ScalarProperty Name="eventPrice" ColumnName="eventPrice" />
+                <ScalarProperty Name="eventName" ColumnName="eventName" />
+                <ScalarProperty Name="yearLvl" ColumnName="yearLvl" />
+                <ScalarProperty Name="userIdNumber" ColumnName="userIdNumber" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="paymentId" ColumnName="paymentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentForMisc">
+            <EntityTypeMapping TypeName="DBSYSModel.PaymentForMisc">
+              <MappingFragment StoreEntitySet="PaymentForMisc">
+                <ScalarProperty Name="miscPrice" ColumnName="miscPrice" />
+                <ScalarProperty Name="paymentdate" ColumnName="paymentdate" />
+                <ScalarProperty Name="miscName" ColumnName="miscName" />
+                <ScalarProperty Name="yearLvl" ColumnName="yearLvl" />
+                <ScalarProperty Name="userIdNumber" ColumnName="userIdNumber" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="paymentId" ColumnName="paymentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="payment">
+            <EntityTypeMapping TypeName="DBSYSModel.payment">
+              <MappingFragment StoreEntitySet="payment">
+                <ScalarProperty Name="eventPrice" ColumnName="eventPrice" />
+                <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
+                <ScalarProperty Name="paymentFor" ColumnName="paymentFor" />
+                <ScalarProperty Name="yearLvl" ColumnName="yearLvl" />
+                <ScalarProperty Name="userIdNumber" ColumnName="userIdNumber" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="paymentId" ColumnName="paymentId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

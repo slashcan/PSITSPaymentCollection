@@ -23,10 +23,12 @@
       <Parameter Name="role" Mode="In" Type="Int32" />
       <Parameter Name="createdBy" Mode="In" Type="Int32" />
     </FunctionImport>
-    <EntitySet Name="payment" EntityType="DBSYSModel.payment" />
     <EntitySet Name="YearLevel" EntityType="DBSYSModel.YearLevel" />
     <EntitySet Name="Events" EntityType="DBSYSModel.Events" />
     <EntitySet Name="vw_total_event_sales" EntityType="DBSYSModel.vw_total_event_sales" />
+    <EntitySet Name="PaymentForEvent" EntityType="DBSYSModel.PaymentForEvent" />
+    <EntitySet Name="PaymentForMisc" EntityType="DBSYSModel.PaymentForMisc" />
+    <EntitySet Name="payment" EntityType="DBSYSModel.payment" />
   </EntityContainer>
   <EntityType Name="Role">
     <Key>
@@ -93,17 +95,6 @@
     <Property Name="miscName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="miscPrice" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityType Name="payment">
-    <Key>
-      <PropertyRef Name="paymentId" />
-    </Key>
-    <Property Name="paymentId" Type="Int32" Nullable="false" />
-    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="userIdNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="yearLvl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="eventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="eventPrice" Type="Int32" />
-  </EntityType>
   <EntityType Name="YearLevel">
     <Key>
       <PropertyRef Name="yrId" />
@@ -127,5 +118,41 @@
     <Property Name="eventId" Type="Int32" Nullable="false" />
     <Property Name="eventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Total_Sales" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PaymentForEvent">
+    <Key>
+      <PropertyRef Name="paymentId" />
+    </Key>
+    <Property Name="paymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userIdNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yearLvl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="eventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="eventPrice" Type="Int32" />
+    <Property Name="paymentDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="PaymentForMisc">
+    <Key>
+      <PropertyRef Name="paymentId" />
+    </Key>
+    <Property Name="paymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userIdNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yearLvl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="miscName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="paymentdate" Type="DateTime" Precision="0" />
+    <Property Name="miscPrice" Type="Int32" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="paymentId" />
+    </Key>
+    <Property Name="paymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userIdNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yearLvl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="paymentFor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="paymentDate" Type="DateTime" Precision="0" />
+    <Property Name="eventPrice" Type="Int32" />
   </EntityType>
 </Schema>

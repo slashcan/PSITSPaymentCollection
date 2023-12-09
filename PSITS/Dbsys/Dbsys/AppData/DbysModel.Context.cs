@@ -46,13 +46,17 @@ public partial class DBSYSEntities : DbContext
 
     public DbSet<Misc> Misc { get; set; }
 
-    public DbSet<payment> payment { get; set; }
-
     public DbSet<YearLevel> YearLevel { get; set; }
 
     public DbSet<Events> Events { get; set; }
 
     public DbSet<vw_total_event_sales> vw_total_event_sales { get; set; }
+
+    public DbSet<PaymentForEvent> PaymentForEvent { get; set; }
+
+    public DbSet<PaymentForMisc> PaymentForMisc { get; set; }
+
+    public DbSet<payment> payment { get; set; }
 
 
     public virtual int sp_CreateUser(string username, string password, Nullable<int> role, string status, Nullable<int> createdBy)

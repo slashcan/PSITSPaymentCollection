@@ -56,18 +56,6 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="sp_newUser" FunctionName="DBSYSModel.Store.sp_newUser" />
-    <EntitySetMapping Name="payment">
-      <EntityTypeMapping TypeName="DBSYSModel.payment">
-        <MappingFragment StoreEntitySet="payment">
-          <ScalarProperty Name="eventPrice" ColumnName="eventPrice" />
-          <ScalarProperty Name="eventName" ColumnName="eventName" />
-          <ScalarProperty Name="yearLvl" ColumnName="yearLvl" />
-          <ScalarProperty Name="userIdNumber" ColumnName="userIdNumber" />
-          <ScalarProperty Name="userName" ColumnName="userName" />
-          <ScalarProperty Name="paymentId" ColumnName="paymentId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="YearLevel">
       <EntityTypeMapping TypeName="DBSYSModel.YearLevel">
         <MappingFragment StoreEntitySet="YearLevel">
@@ -92,6 +80,45 @@
           <ScalarProperty Name="Total_Sales" ColumnName="Total Sales" />
           <ScalarProperty Name="eventName" ColumnName="eventName" />
           <ScalarProperty Name="eventId" ColumnName="eventId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentForEvent">
+      <EntityTypeMapping TypeName="DBSYSModel.PaymentForEvent">
+        <MappingFragment StoreEntitySet="PaymentForEvent">
+          <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
+          <ScalarProperty Name="eventPrice" ColumnName="eventPrice" />
+          <ScalarProperty Name="eventName" ColumnName="eventName" />
+          <ScalarProperty Name="yearLvl" ColumnName="yearLvl" />
+          <ScalarProperty Name="userIdNumber" ColumnName="userIdNumber" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="paymentId" ColumnName="paymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentForMisc">
+      <EntityTypeMapping TypeName="DBSYSModel.PaymentForMisc">
+        <MappingFragment StoreEntitySet="PaymentForMisc">
+          <ScalarProperty Name="miscPrice" ColumnName="miscPrice" />
+          <ScalarProperty Name="paymentdate" ColumnName="paymentdate" />
+          <ScalarProperty Name="miscName" ColumnName="miscName" />
+          <ScalarProperty Name="yearLvl" ColumnName="yearLvl" />
+          <ScalarProperty Name="userIdNumber" ColumnName="userIdNumber" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="paymentId" ColumnName="paymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payment">
+      <EntityTypeMapping TypeName="DBSYSModel.payment">
+        <MappingFragment StoreEntitySet="payment">
+          <ScalarProperty Name="eventPrice" ColumnName="eventPrice" />
+          <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
+          <ScalarProperty Name="paymentFor" ColumnName="paymentFor" />
+          <ScalarProperty Name="yearLvl" ColumnName="yearLvl" />
+          <ScalarProperty Name="userIdNumber" ColumnName="userIdNumber" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="paymentId" ColumnName="paymentId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
