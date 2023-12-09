@@ -114,27 +114,27 @@
             this.eventToolStripMenuItem,
             this.miscToolStripMenuItem});
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.createToolStripMenuItem.Text = "&New";
             // 
             // createUserToolStripMenuItem
             // 
             this.createUserToolStripMenuItem.Name = "createUserToolStripMenuItem";
-            this.createUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createUserToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.createUserToolStripMenuItem.Text = "User";
             this.createUserToolStripMenuItem.Click += new System.EventHandler(this.createUserToolStripMenuItem_Click);
             // 
             // eventToolStripMenuItem
             // 
             this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
-            this.eventToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eventToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.eventToolStripMenuItem.Text = "Event";
             this.eventToolStripMenuItem.Click += new System.EventHandler(this.eventToolStripMenuItem_Click);
             // 
             // miscToolStripMenuItem
             // 
             this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
-            this.miscToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miscToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.miscToolStripMenuItem.Text = "Misc";
             this.miscToolStripMenuItem.Click += new System.EventHandler(this.miscToolStripMenuItem_Click);
             // 
@@ -149,14 +149,14 @@
             // studentStatusToolStripMenuItem
             // 
             this.studentStatusToolStripMenuItem.Name = "studentStatusToolStripMenuItem";
-            this.studentStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.studentStatusToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.studentStatusToolStripMenuItem.Text = "Student Status";
             this.studentStatusToolStripMenuItem.Click += new System.EventHandler(this.studentStatusToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // label1
@@ -188,6 +188,7 @@
             this.dgvEvent.Name = "dgvEvent";
             this.dgvEvent.Size = new System.Drawing.Size(255, 334);
             this.dgvEvent.TabIndex = 0;
+            this.dgvEvent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEvent_CellContentClick);
             // 
             // label3
             // 

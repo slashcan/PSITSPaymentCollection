@@ -62,5 +62,10 @@ namespace Dbsys.Forms
         {
             new Frm_Student_Status().Show();
         }
+
+        private void dgvEvent_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

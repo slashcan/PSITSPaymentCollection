@@ -85,6 +85,16 @@ warning 6002: The table/view 'DBSYS.dbo.vw_all_user_role' does not have a primar
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Role" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBSYS.dbo.vw_total_event_sales' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_total_event_sales">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="int" Nullable="false" />
+          <Property Name="eventName" Type="varchar" MaxLength="50" />
+          <Property Name="Total Sales" Type="int" />
+        </EntityType>
         <Association Name="FK__UserInfor__userI__1BFD2C07">
           <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="0..1" />
           <End Role="UserInformation" Type="Self.UserInformation" Multiplicity="*" />
@@ -118,6 +128,13 @@ warning 6002: The table/view 'DBSYS.dbo.vw_all_user_role' does not have a primar
 [vw_all_user_role].[Password] AS [Password], 
 [vw_all_user_role].[Role] AS [Role]
 FROM [dbo].[vw_all_user_role] AS [vw_all_user_role]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_total_event_sales" EntityType="Self.vw_total_event_sales" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_total_event_sales].[eventId] AS [eventId], 
+[vw_total_event_sales].[eventName] AS [eventName], 
+[vw_total_event_sales].[Total Sales] AS [Total Sales]
+FROM [dbo].[vw_total_event_sales] AS [vw_total_event_sales]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__UserInfor__userI__1BFD2C07" Association="Self.FK__UserInfor__userI__1BFD2C07">
             <End Role="UserAccount" EntitySet="UserAccount" />
@@ -154,6 +171,7 @@ FROM [dbo].[vw_all_user_role] AS [vw_all_user_role]</DefiningQuery>
           <EntitySet Name="payment" EntityType="DBSYSModel.payment" />
           <EntitySet Name="YearLevel" EntityType="DBSYSModel.YearLevel" />
           <EntitySet Name="Events" EntityType="DBSYSModel.Events" />
+          <EntitySet Name="vw_total_event_sales" EntityType="DBSYSModel.vw_total_event_sales" />
         </EntityContainer>
         <EntityType Name="Role">
           <Key>
@@ -247,6 +265,14 @@ FROM [dbo].[vw_all_user_role] AS [vw_all_user_role]</DefiningQuery>
           <Property Name="eventDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="eventPrice" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="vw_total_event_sales">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="Int32" Nullable="false" />
+          <Property Name="eventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Sales" Type="Int32" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -333,6 +359,15 @@ FROM [dbo].[vw_all_user_role] AS [vw_all_user_role]</DefiningQuery>
               <MappingFragment StoreEntitySet="Events">
                 <ScalarProperty Name="eventPrice" ColumnName="eventPrice" />
                 <ScalarProperty Name="eventDate" ColumnName="eventDate" />
+                <ScalarProperty Name="eventName" ColumnName="eventName" />
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_total_event_sales">
+            <EntityTypeMapping TypeName="DBSYSModel.vw_total_event_sales">
+              <MappingFragment StoreEntitySet="vw_total_event_sales">
+                <ScalarProperty Name="Total_Sales" ColumnName="Total Sales" />
                 <ScalarProperty Name="eventName" ColumnName="eventName" />
                 <ScalarProperty Name="eventId" ColumnName="eventId" />
               </MappingFragment>

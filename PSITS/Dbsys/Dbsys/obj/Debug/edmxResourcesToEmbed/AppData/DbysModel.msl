@@ -86,5 +86,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="vw_total_event_sales">
+      <EntityTypeMapping TypeName="DBSYSModel.vw_total_event_sales">
+        <MappingFragment StoreEntitySet="vw_total_event_sales">
+          <ScalarProperty Name="Total_Sales" ColumnName="Total Sales" />
+          <ScalarProperty Name="eventName" ColumnName="eventName" />
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

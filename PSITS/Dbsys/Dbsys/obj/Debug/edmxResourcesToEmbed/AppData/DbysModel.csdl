@@ -26,6 +26,7 @@
     <EntitySet Name="payment" EntityType="DBSYSModel.payment" />
     <EntitySet Name="YearLevel" EntityType="DBSYSModel.YearLevel" />
     <EntitySet Name="Events" EntityType="DBSYSModel.Events" />
+    <EntitySet Name="vw_total_event_sales" EntityType="DBSYSModel.vw_total_event_sales" />
   </EntityContainer>
   <EntityType Name="Role">
     <Key>
@@ -118,5 +119,13 @@
     <Property Name="eventName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="eventDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="eventPrice" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_total_event_sales">
+    <Key>
+      <PropertyRef Name="eventId" />
+    </Key>
+    <Property Name="eventId" Type="Int32" Nullable="false" />
+    <Property Name="eventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Total_Sales" Type="Int32" />
   </EntityType>
 </Schema>

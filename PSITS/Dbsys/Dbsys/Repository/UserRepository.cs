@@ -133,6 +133,14 @@ namespace Dbsys
             }
         }
 
+        public List<vw_total_event_sales> ShowEventSales()
+        {
+            using (db = new DBSYSEntities())
+            {
+                return db.vw_total_event_sales.ToList();
+            }
+        }
+
         public List<Events> ShowEvents()
         {
             using (db = new DBSYSEntities())
@@ -149,6 +157,13 @@ namespace Dbsys
             }
         }
 
+        public List<payment> ShowStatus()
+        {
+            using (db = new DBSYSEntities())
+            {
+                return db.payment.ToList();
+            }
+        }
 
     }
 }

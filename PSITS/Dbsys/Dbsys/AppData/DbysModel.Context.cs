@@ -52,6 +52,8 @@ public partial class DBSYSEntities : DbContext
 
     public DbSet<Events> Events { get; set; }
 
+    public DbSet<vw_total_event_sales> vw_total_event_sales { get; set; }
+
 
     public virtual int sp_CreateUser(string username, string password, Nullable<int> role, string status, Nullable<int> createdBy)
     {

@@ -91,6 +91,9 @@
     <Compile Include="AppData\vw_all_user_role.cs">
       <DependentUpon>DbysModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppData\vw_total_event_sales.cs">
+      <DependentUpon>DbysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\YearLevel.cs">
       <DependentUpon>DbysModel.tt</DependentUpon>
     </Compile>
@@ -142,6 +145,12 @@
     <Compile Include="Forms\Frm_Student_Status.Designer.cs">
       <DependentUpon>Frm_Student_Status.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_Total_Sales_Events.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Total_Sales_Events.Designer.cs">
+      <DependentUpon>Frm_Total_Sales_Events.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_UserEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Student_Status.resx">
       <DependentUpon>Frm_Student_Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Total_Sales_Events.resx">
+      <DependentUpon>Frm_Total_Sales_Events.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_UserEntry.resx">
       <DependentUpon>Frm_UserEntry.cs</DependentUpon>
