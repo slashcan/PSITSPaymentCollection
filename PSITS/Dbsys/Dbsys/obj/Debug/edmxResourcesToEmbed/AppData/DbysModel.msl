@@ -74,15 +74,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="vw_total_event_sales">
-      <EntityTypeMapping TypeName="DBSYSModel.vw_total_event_sales">
-        <MappingFragment StoreEntitySet="vw_total_event_sales">
-          <ScalarProperty Name="Total_Sales" ColumnName="Total Sales" />
-          <ScalarProperty Name="eventName" ColumnName="eventName" />
-          <ScalarProperty Name="eventId" ColumnName="eventId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PaymentForEvent">
       <EntityTypeMapping TypeName="DBSYSModel.PaymentForEvent">
         <MappingFragment StoreEntitySet="PaymentForEvent">
@@ -119,6 +110,60 @@
           <ScalarProperty Name="userIdNumber" ColumnName="userIdNumber" />
           <ScalarProperty Name="userName" ColumnName="userName" />
           <ScalarProperty Name="paymentId" ColumnName="paymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_total_event_sales">
+      <EntityTypeMapping TypeName="DBSYSModel.vw_total_event_sales">
+        <MappingFragment StoreEntitySet="vw_total_event_sales">
+          <ScalarProperty Name="Total_Sales" ColumnName="Total Sales" />
+          <ScalarProperty Name="eventName" ColumnName="eventName" />
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_total_misc_sales">
+      <EntityTypeMapping TypeName="DBSYSModel.vw_total_misc_sales">
+        <MappingFragment StoreEntitySet="vw_total_misc_sales">
+          <ScalarProperty Name="Total_Sales" ColumnName="Total Sales" />
+          <ScalarProperty Name="miscName" ColumnName="miscName" />
+          <ScalarProperty Name="miscId" ColumnName="miscId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_total_applicants_1styr">
+      <EntityTypeMapping TypeName="DBSYSModel.vw_total_applicants_1styr">
+        <MappingFragment StoreEntitySet="vw_total_applicants_1styr">
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="C1st_Year_Applicants" ColumnName="1st Year Applicants" />
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_total_applicants_2ndyr">
+      <EntityTypeMapping TypeName="DBSYSModel.vw_total_applicants_2ndyr">
+        <MappingFragment StoreEntitySet="vw_total_applicants_2ndyr">
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="C2nd_Year_Applicants" ColumnName="2nd Year Applicants" />
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_total_applicants_3rdyr">
+      <EntityTypeMapping TypeName="DBSYSModel.vw_total_applicants_3rdyr">
+        <MappingFragment StoreEntitySet="vw_total_applicants_3rdyr">
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="C3rd_Year_Applicants" ColumnName="3rd Year Applicants" />
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_total_applicants_4thyr">
+      <EntityTypeMapping TypeName="DBSYSModel.vw_total_applicants_4thyr">
+        <MappingFragment StoreEntitySet="vw_total_applicants_4thyr">
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="C4th_Year_Applicants" ColumnName="4th Year Applicants" />
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

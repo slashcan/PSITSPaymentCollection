@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5ba6b4505a7a4141ba9c39e83a8dbe66" Name="Diagram1" ZoomLevel="86">
+      <Diagram DiagramId="5ba6b4505a7a4141ba9c39e83a8dbe66" Name="Diagram1" ZoomLevel="83">
         <EntityTypeShape EntityType="DBSYSModel.Role" Width="1.5" PointX="7.75" PointY="4" />
         <EntityTypeShape EntityType="DBSYSModel.UserAccount" Width="1.5" PointX="0.75" PointY="1" />
         <EntityTypeShape EntityType="DBSYSModel.UserInformation" Width="1.5" PointX="3" PointY="1" />
@@ -13,10 +13,15 @@
         <EntityTypeShape EntityType="DBSYSModel.Misc" Width="1.5" PointX="9.5" PointY="1" />
         <EntityTypeShape EntityType="DBSYSModel.YearLevel" Width="1.5" PointX="4.875" PointY="0.75" />
         <EntityTypeShape EntityType="DBSYSModel.Events" Width="1.5" PointX="9.375" PointY="2.875" />
-        <EntityTypeShape EntityType="DBSYSModel.vw_total_event_sales" Width="1.5" PointX="5.875" PointY="4.875" />
-        <EntityTypeShape EntityType="DBSYSModel.PaymentForEvent" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="DBSYSModel.PaymentForMisc" Width="2.125" PointX="2.625" PointY="4.75" />
+        <EntityTypeShape EntityType="DBSYSModel.PaymentForEvent" Width="1.75" PointX="0.5" PointY="4.75" />
+        <EntityTypeShape EntityType="DBSYSModel.PaymentForMisc" Width="1.75" PointX="2.625" PointY="4.75" />
         <EntityTypeShape EntityType="DBSYSModel.payment" Width="1.5" PointX="7.625" PointY="0.875" />
+        <EntityTypeShape EntityType="DBSYSModel.vw_total_event_sales" Width="1.875" PointX="9.875" PointY="6.125" />
+        <EntityTypeShape EntityType="DBSYSModel.vw_total_misc_sales" Width="1.5" PointX="7.875" PointY="5.875" />
+        <EntityTypeShape EntityType="DBSYSModel.vw_total_applicants_1styr" Width="2" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DBSYSModel.vw_total_applicants_2ndyr" Width="1.5" PointX="3" PointY="8.75" />
+        <EntityTypeShape EntityType="DBSYSModel.vw_total_applicants_3rdyr" Width="1.5" PointX="4.5" PointY="8.75" />
+        <EntityTypeShape EntityType="DBSYSModel.vw_total_applicants_4thyr" Width="1.5" PointX="6.125" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

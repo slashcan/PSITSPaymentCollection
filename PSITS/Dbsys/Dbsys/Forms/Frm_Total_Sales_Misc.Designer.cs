@@ -59,6 +59,7 @@
             this.Controls.Add(this.dgvMiscSales);
             this.Name = "Frm_Total_Sales_Misc";
             this.Text = "Frm_Total_Sales_Misc";
+            this.Load += new System.EventHandler(this.Frm_Total_Sales_Misc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMiscSales)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

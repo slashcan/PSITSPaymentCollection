@@ -111,6 +111,46 @@ warning 6002: The table/view 'DBSYS.dbo.vw_all_user_role' does not have a primar
           <Property Name="Role" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'DBSYS.dbo.vw_total_applicants_1styr' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_total_applicants_1styr">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="int" Nullable="false" />
+          <Property Name="1st Year Applicants" Type="int" />
+          <Property Name="Event" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBSYS.dbo.vw_total_applicants_2ndyr' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_total_applicants_2ndyr">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="int" Nullable="false" />
+          <Property Name="2nd Year Applicants" Type="int" />
+          <Property Name="Event" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBSYS.dbo.vw_total_applicants_3rdyr' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_total_applicants_3rdyr">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="int" Nullable="false" />
+          <Property Name="3rd Year Applicants" Type="int" />
+          <Property Name="Event" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBSYS.dbo.vw_total_applicants_4thyr' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_total_applicants_4thyr">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="int" Nullable="false" />
+          <Property Name="4th Year Applicants" Type="int" />
+          <Property Name="Event" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'DBSYS.dbo.vw_total_event_sales' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vw_total_event_sales">
           <Key>
@@ -118,6 +158,16 @@ warning 6002: The table/view 'DBSYS.dbo.vw_total_event_sales' does not have a pr
           </Key>
           <Property Name="eventId" Type="int" Nullable="false" />
           <Property Name="eventName" Type="varchar" MaxLength="50" />
+          <Property Name="Total Sales" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBSYS.dbo.vw_total_misc_sales' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_total_misc_sales">
+          <Key>
+            <PropertyRef Name="miscId" />
+          </Key>
+          <Property Name="miscId" Type="int" Nullable="false" />
+          <Property Name="miscName" Type="varchar" MaxLength="50" />
           <Property Name="Total Sales" Type="int" />
         </EntityType>
         <Association Name="FK__UserInfor__userI__1BFD2C07">
@@ -156,12 +206,47 @@ warning 6002: The table/view 'DBSYS.dbo.vw_total_event_sales' does not have a pr
 [vw_all_user_role].[Role] AS [Role]
 FROM [dbo].[vw_all_user_role] AS [vw_all_user_role]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vw_total_applicants_1styr" EntityType="Self.vw_total_applicants_1styr" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_total_applicants_1styr].[eventId] AS [eventId], 
+[vw_total_applicants_1styr].[1st Year Applicants] AS [1st Year Applicants], 
+[vw_total_applicants_1styr].[Event] AS [Event]
+FROM [dbo].[vw_total_applicants_1styr] AS [vw_total_applicants_1styr]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_total_applicants_2ndyr" EntityType="Self.vw_total_applicants_2ndyr" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_total_applicants_2ndyr].[eventId] AS [eventId], 
+[vw_total_applicants_2ndyr].[2nd Year Applicants] AS [2nd Year Applicants], 
+[vw_total_applicants_2ndyr].[Event] AS [Event]
+FROM [dbo].[vw_total_applicants_2ndyr] AS [vw_total_applicants_2ndyr]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_total_applicants_3rdyr" EntityType="Self.vw_total_applicants_3rdyr" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_total_applicants_3rdyr].[eventId] AS [eventId], 
+[vw_total_applicants_3rdyr].[3rd Year Applicants] AS [3rd Year Applicants], 
+[vw_total_applicants_3rdyr].[Event] AS [Event]
+FROM [dbo].[vw_total_applicants_3rdyr] AS [vw_total_applicants_3rdyr]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_total_applicants_4thyr" EntityType="Self.vw_total_applicants_4thyr" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_total_applicants_4thyr].[eventId] AS [eventId], 
+[vw_total_applicants_4thyr].[4th Year Applicants] AS [4th Year Applicants], 
+[vw_total_applicants_4thyr].[Event] AS [Event]
+FROM [dbo].[vw_total_applicants_4thyr] AS [vw_total_applicants_4thyr]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vw_total_event_sales" EntityType="Self.vw_total_event_sales" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [vw_total_event_sales].[eventId] AS [eventId], 
 [vw_total_event_sales].[eventName] AS [eventName], 
 [vw_total_event_sales].[Total Sales] AS [Total Sales]
 FROM [dbo].[vw_total_event_sales] AS [vw_total_event_sales]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_total_misc_sales" EntityType="Self.vw_total_misc_sales" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_total_misc_sales].[miscId] AS [miscId], 
+[vw_total_misc_sales].[miscName] AS [miscName], 
+[vw_total_misc_sales].[Total Sales] AS [Total Sales]
+FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__UserInfor__userI__1BFD2C07" Association="Self.FK__UserInfor__userI__1BFD2C07">
             <End Role="UserAccount" EntitySet="UserAccount" />
@@ -197,10 +282,15 @@ FROM [dbo].[vw_total_event_sales] AS [vw_total_event_sales]</DefiningQuery>
           </FunctionImport>
           <EntitySet Name="YearLevel" EntityType="DBSYSModel.YearLevel" />
           <EntitySet Name="Events" EntityType="DBSYSModel.Events" />
-          <EntitySet Name="vw_total_event_sales" EntityType="DBSYSModel.vw_total_event_sales" />
           <EntitySet Name="PaymentForEvent" EntityType="DBSYSModel.PaymentForEvent" />
           <EntitySet Name="PaymentForMisc" EntityType="DBSYSModel.PaymentForMisc" />
           <EntitySet Name="payment" EntityType="DBSYSModel.payment" />
+          <EntitySet Name="vw_total_event_sales" EntityType="DBSYSModel.vw_total_event_sales" />
+          <EntitySet Name="vw_total_misc_sales" EntityType="DBSYSModel.vw_total_misc_sales" />
+          <EntitySet Name="vw_total_applicants_1styr" EntityType="DBSYSModel.vw_total_applicants_1styr" />
+          <EntitySet Name="vw_total_applicants_2ndyr" EntityType="DBSYSModel.vw_total_applicants_2ndyr" />
+          <EntitySet Name="vw_total_applicants_3rdyr" EntityType="DBSYSModel.vw_total_applicants_3rdyr" />
+          <EntitySet Name="vw_total_applicants_4thyr" EntityType="DBSYSModel.vw_total_applicants_4thyr" />
         </EntityContainer>
         <EntityType Name="Role">
           <Key>
@@ -283,14 +373,6 @@ FROM [dbo].[vw_total_event_sales] AS [vw_total_event_sales]</DefiningQuery>
           <Property Name="eventDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="eventPrice" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="vw_total_event_sales">
-          <Key>
-            <PropertyRef Name="eventId" />
-          </Key>
-          <Property Name="eventId" Type="Int32" Nullable="false" />
-          <Property Name="eventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Total_Sales" Type="Int32" />
-        </EntityType>
         <EntityType Name="PaymentForEvent">
           <Key>
             <PropertyRef Name="paymentId" />
@@ -326,6 +408,54 @@ FROM [dbo].[vw_total_event_sales] AS [vw_total_event_sales]</DefiningQuery>
           <Property Name="paymentFor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="paymentDate" Type="DateTime" Precision="0" />
           <Property Name="eventPrice" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vw_total_event_sales">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="Int32" Nullable="false" />
+          <Property Name="eventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Sales" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vw_total_misc_sales">
+          <Key>
+            <PropertyRef Name="miscId" />
+          </Key>
+          <Property Name="miscId" Type="Int32" Nullable="false" />
+          <Property Name="miscName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Sales" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vw_total_applicants_1styr">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="Int32" Nullable="false" />
+          <Property Name="C1st_Year_Applicants" Type="Int32" />
+          <Property Name="Event" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vw_total_applicants_2ndyr">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="Int32" Nullable="false" />
+          <Property Name="C2nd_Year_Applicants" Type="Int32" />
+          <Property Name="Event" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vw_total_applicants_3rdyr">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="Int32" Nullable="false" />
+          <Property Name="C3rd_Year_Applicants" Type="Int32" />
+          <Property Name="Event" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vw_total_applicants_4thyr">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="Int32" Nullable="false" />
+          <Property Name="C4th_Year_Applicants" Type="Int32" />
+          <Property Name="Event" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -406,15 +536,6 @@ FROM [dbo].[vw_total_event_sales] AS [vw_total_event_sales]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vw_total_event_sales">
-            <EntityTypeMapping TypeName="DBSYSModel.vw_total_event_sales">
-              <MappingFragment StoreEntitySet="vw_total_event_sales">
-                <ScalarProperty Name="Total_Sales" ColumnName="Total Sales" />
-                <ScalarProperty Name="eventName" ColumnName="eventName" />
-                <ScalarProperty Name="eventId" ColumnName="eventId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PaymentForEvent">
             <EntityTypeMapping TypeName="DBSYSModel.PaymentForEvent">
               <MappingFragment StoreEntitySet="PaymentForEvent">
@@ -451,6 +572,60 @@ FROM [dbo].[vw_total_event_sales] AS [vw_total_event_sales]</DefiningQuery>
                 <ScalarProperty Name="userIdNumber" ColumnName="userIdNumber" />
                 <ScalarProperty Name="userName" ColumnName="userName" />
                 <ScalarProperty Name="paymentId" ColumnName="paymentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_total_event_sales">
+            <EntityTypeMapping TypeName="DBSYSModel.vw_total_event_sales">
+              <MappingFragment StoreEntitySet="vw_total_event_sales">
+                <ScalarProperty Name="Total_Sales" ColumnName="Total Sales" />
+                <ScalarProperty Name="eventName" ColumnName="eventName" />
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_total_misc_sales">
+            <EntityTypeMapping TypeName="DBSYSModel.vw_total_misc_sales">
+              <MappingFragment StoreEntitySet="vw_total_misc_sales">
+                <ScalarProperty Name="Total_Sales" ColumnName="Total Sales" />
+                <ScalarProperty Name="miscName" ColumnName="miscName" />
+                <ScalarProperty Name="miscId" ColumnName="miscId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_total_applicants_1styr">
+            <EntityTypeMapping TypeName="DBSYSModel.vw_total_applicants_1styr">
+              <MappingFragment StoreEntitySet="vw_total_applicants_1styr">
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="C1st_Year_Applicants" ColumnName="1st Year Applicants" />
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_total_applicants_2ndyr">
+            <EntityTypeMapping TypeName="DBSYSModel.vw_total_applicants_2ndyr">
+              <MappingFragment StoreEntitySet="vw_total_applicants_2ndyr">
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="C2nd_Year_Applicants" ColumnName="2nd Year Applicants" />
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_total_applicants_3rdyr">
+            <EntityTypeMapping TypeName="DBSYSModel.vw_total_applicants_3rdyr">
+              <MappingFragment StoreEntitySet="vw_total_applicants_3rdyr">
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="C3rd_Year_Applicants" ColumnName="3rd Year Applicants" />
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_total_applicants_4thyr">
+            <EntityTypeMapping TypeName="DBSYSModel.vw_total_applicants_4thyr">
+              <MappingFragment StoreEntitySet="vw_total_applicants_4thyr">
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="C4th_Year_Applicants" ColumnName="4th Year Applicants" />
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

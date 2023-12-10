@@ -50,13 +50,23 @@ public partial class DBSYSEntities : DbContext
 
     public DbSet<Events> Events { get; set; }
 
-    public DbSet<vw_total_event_sales> vw_total_event_sales { get; set; }
-
     public DbSet<PaymentForEvent> PaymentForEvent { get; set; }
 
     public DbSet<PaymentForMisc> PaymentForMisc { get; set; }
 
     public DbSet<payment> payment { get; set; }
+
+    public DbSet<vw_total_event_sales> vw_total_event_sales { get; set; }
+
+    public DbSet<vw_total_misc_sales> vw_total_misc_sales { get; set; }
+
+    public DbSet<vw_total_applicants_1styr> vw_total_applicants_1styr { get; set; }
+
+    public DbSet<vw_total_applicants_2ndyr> vw_total_applicants_2ndyr { get; set; }
+
+    public DbSet<vw_total_applicants_3rdyr> vw_total_applicants_3rdyr { get; set; }
+
+    public DbSet<vw_total_applicants_4thyr> vw_total_applicants_4thyr { get; set; }
 
 
     public virtual int sp_CreateUser(string username, string password, Nullable<int> role, string status, Nullable<int> createdBy)

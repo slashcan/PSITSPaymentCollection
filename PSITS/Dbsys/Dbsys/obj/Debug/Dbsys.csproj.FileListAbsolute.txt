@@ -93,3 +93,4 @@ C:\Users\slash\OneDrive\Documents\GitHub\PSITSPaymentCollection\PSITS\Dbsys\Dbsy
 C:\Users\slash\OneDrive\Documents\GitHub\PSITSPaymentCollection\PSITS\Dbsys\Dbsys\obj\Debug\Dbsys.Forms.Frm_Receive_Payment.resources
 C:\Users\slash\OneDrive\Documents\GitHub\PSITSPaymentCollection\PSITS\Dbsys\Dbsys\obj\Debug\Dbsys.Forms.Frm_Total_Sales_Events.resources
 C:\Users\slash\OneDrive\Documents\GitHub\PSITSPaymentCollection\PSITS\Dbsys\Dbsys\obj\Debug\Dbsys.Forms.Frm_Total_Sales_Misc.resources
+C:\Users\slash\OneDrive\Documents\GitHub\PSITSPaymentCollection\PSITS\Dbsys\Dbsys\obj\Debug\Dbsys.Forms.Frm_Total_Applicants.resources

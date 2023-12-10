@@ -131,6 +131,7 @@
             this.eventsToolStripMenuItem1.Name = "eventsToolStripMenuItem1";
             this.eventsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.eventsToolStripMenuItem1.Text = "Events";
+            this.eventsToolStripMenuItem1.Click += new System.EventHandler(this.eventsToolStripMenuItem1_Click);
             // 
             // Frm_Student_Status
             // 

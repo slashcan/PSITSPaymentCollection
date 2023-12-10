@@ -141,6 +141,49 @@ namespace Dbsys
             }
         }
 
+        public List<vw_total_applicants_1styr> ShowTotalEventApplicants1stYear()
+        {
+            using (db = new DBSYSEntities())
+            {
+                return db.vw_total_applicants_1styr.ToList();
+            }
+        }
+
+        public List<vw_total_applicants_2ndyr> ShowTotalEventApplicants2ndYear()
+        {
+            using (db = new DBSYSEntities())
+            {
+                return db.vw_total_applicants_2ndyr.ToList();
+            }
+        }
+
+
+        public List<vw_total_applicants_3rdyr> ShowTotalEventApplicants3rdYear()
+        {
+            using (db = new DBSYSEntities())
+            {
+                return db.vw_total_applicants_3rdyr.ToList();
+            }
+        }
+
+
+        public List<vw_total_applicants_4thyr> ShowTotalEventApplicants4thYear()
+        {
+            using (db = new DBSYSEntities())
+            {
+                return db.vw_total_applicants_4thyr.ToList();
+            }
+        }
+
+
+        public List<vw_total_misc_sales> ShowMiscSales() 
+        {
+            using (db = new DBSYSEntities())
+            {
+                return db.vw_total_misc_sales.ToList();
+            }
+        }
+
         public List<Events> ShowEvents()
         {
             using (db = new DBSYSEntities())
