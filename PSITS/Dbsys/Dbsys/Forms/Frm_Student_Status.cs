@@ -85,5 +85,10 @@ namespace Dbsys.Forms
         {
             new Frm_Total_Applicants().Show();
         }
+
+        private void miscToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new Frm_Total_Sales_Misc().Show();
+        }
     }
 }

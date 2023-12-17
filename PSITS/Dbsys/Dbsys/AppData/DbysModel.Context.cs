@@ -101,7 +101,7 @@ public partial class DBSYSEntities : DbContext
     }
 
 
-    public virtual int sp_newUser(string username, string password, Nullable<int> role, Nullable<int> createdBy)
+    public virtual int sp_newUser(string username, string password, Nullable<int> role, string status, Nullable<int> createdBy)
     {
 
         var usernameParameter = username != null ?
@@ -119,12 +119,125 @@ public partial class DBSYSEntities : DbContext
             new ObjectParameter("role", typeof(int));
 
 
+        var statusParameter = status != null ?
+            new ObjectParameter("status", status) :
+            new ObjectParameter("status", typeof(string));
+
+
         var createdByParameter = createdBy.HasValue ?
             new ObjectParameter("createdBy", createdBy) :
             new ObjectParameter("createdBy", typeof(int));
 
 
-        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_newUser", usernameParameter, passwordParameter, roleParameter, createdByParameter);
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_newUser", usernameParameter, passwordParameter, roleParameter, statusParameter, createdByParameter);
+    }
+
+
+    public virtual int InsertUserAccount(string username, string password, Nullable<int> role, string status, string createdBy)
+    {
+
+        var usernameParameter = username != null ?
+            new ObjectParameter("username", username) :
+            new ObjectParameter("username", typeof(string));
+
+
+        var passwordParameter = password != null ?
+            new ObjectParameter("password", password) :
+            new ObjectParameter("password", typeof(string));
+
+
+        var roleParameter = role.HasValue ?
+            new ObjectParameter("role", role) :
+            new ObjectParameter("role", typeof(int));
+
+
+        var statusParameter = status != null ?
+            new ObjectParameter("status", status) :
+            new ObjectParameter("status", typeof(string));
+
+
+        var createdByParameter = createdBy != null ?
+            new ObjectParameter("createdBy", createdBy) :
+            new ObjectParameter("createdBy", typeof(string));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertUserAccount", usernameParameter, passwordParameter, roleParameter, statusParameter, createdByParameter);
+    }
+
+
+    public virtual int sp_InsertUserAccount(string username, string password, Nullable<int> role, string status, Nullable<int> createdBy)
+    {
+
+        var usernameParameter = username != null ?
+            new ObjectParameter("username", username) :
+            new ObjectParameter("username", typeof(string));
+
+
+        var passwordParameter = password != null ?
+            new ObjectParameter("password", password) :
+            new ObjectParameter("password", typeof(string));
+
+
+        var roleParameter = role.HasValue ?
+            new ObjectParameter("role", role) :
+            new ObjectParameter("role", typeof(int));
+
+
+        var statusParameter = status != null ?
+            new ObjectParameter("status", status) :
+            new ObjectParameter("status", typeof(string));
+
+
+        var createdByParameter = createdBy.HasValue ?
+            new ObjectParameter("createdBy", createdBy) :
+            new ObjectParameter("createdBy", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertUserAccount", usernameParameter, passwordParameter, roleParameter, statusParameter, createdByParameter);
+    }
+
+
+    public virtual int sp_UpdateUser(Nullable<int> userId, string username, string password, Nullable<int> role, string status)
+    {
+
+        var userIdParameter = userId.HasValue ?
+            new ObjectParameter("userId", userId) :
+            new ObjectParameter("userId", typeof(int));
+
+
+        var usernameParameter = username != null ?
+            new ObjectParameter("username", username) :
+            new ObjectParameter("username", typeof(string));
+
+
+        var passwordParameter = password != null ?
+            new ObjectParameter("password", password) :
+            new ObjectParameter("password", typeof(string));
+
+
+        var roleParameter = role.HasValue ?
+            new ObjectParameter("role", role) :
+            new ObjectParameter("role", typeof(int));
+
+
+        var statusParameter = status != null ?
+            new ObjectParameter("status", status) :
+            new ObjectParameter("status", typeof(string));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UpdateUser", userIdParameter, usernameParameter, passwordParameter, roleParameter, statusParameter);
+    }
+
+
+    public virtual int sp_DeleteUserAccount(Nullable<int> userId)
+    {
+
+        var userIdParameter = userId.HasValue ?
+            new ObjectParameter("userId", userId) :
+            new ObjectParameter("userId", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteUserAccount", userIdParameter);
     }
 
 }

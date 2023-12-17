@@ -182,11 +182,22 @@ warning 6002: The table/view 'DBSYS.dbo.vw_total_misc_sales' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="sp_newUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="sp_DeleteUserAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_InsertUserAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="username" Type="nvarchar" Mode="In" />
           <Parameter Name="password" Type="nvarchar" Mode="In" />
           <Parameter Name="role" Type="int" Mode="In" />
+          <Parameter Name="status" Type="nvarchar" Mode="In" />
           <Parameter Name="createdBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+          <Parameter Name="username" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+          <Parameter Name="role" Type="int" Mode="In" />
+          <Parameter Name="status" Type="nvarchar" Mode="In" />
         </Function>
         <EntityContainer Name="DBSYSModelStoreContainer">
           <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
@@ -278,6 +289,7 @@ FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
             <Parameter Name="username" Mode="In" Type="String" />
             <Parameter Name="password" Mode="In" Type="String" />
             <Parameter Name="role" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
             <Parameter Name="createdBy" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="YearLevel" EntityType="DBSYSModel.YearLevel" />
@@ -291,6 +303,30 @@ FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
           <EntitySet Name="vw_total_applicants_2ndyr" EntityType="DBSYSModel.vw_total_applicants_2ndyr" />
           <EntitySet Name="vw_total_applicants_3rdyr" EntityType="DBSYSModel.vw_total_applicants_3rdyr" />
           <EntitySet Name="vw_total_applicants_4thyr" EntityType="DBSYSModel.vw_total_applicants_4thyr" />
+          <FunctionImport Name="InsertUserAccount">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="role" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="createdBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_InsertUserAccount">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="role" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="createdBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UpdateUser">
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="role" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_DeleteUserAccount">
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Role">
           <Key>
@@ -517,7 +553,6 @@ FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_newUser" FunctionName="DBSYSModel.Store.sp_newUser" />
           <EntitySetMapping Name="YearLevel">
             <EntityTypeMapping TypeName="DBSYSModel.YearLevel">
               <MappingFragment StoreEntitySet="YearLevel">
@@ -629,6 +664,9 @@ FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_InsertUserAccount" FunctionName="DBSYSModel.Store.sp_InsertUserAccount" />
+          <FunctionImportMapping FunctionImportName="sp_UpdateUser" FunctionName="DBSYSModel.Store.sp_UpdateUser" />
+          <FunctionImportMapping FunctionImportName="sp_DeleteUserAccount" FunctionName="DBSYSModel.Store.sp_DeleteUserAccount" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvMisc = new System.Windows.Forms.DataGridView();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisc)).BeginInit();
@@ -59,7 +60,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.logoutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(726, 24);
@@ -113,7 +115,7 @@
             // studentStatusToolStripMenuItem
             // 
             this.studentStatusToolStripMenuItem.Name = "studentStatusToolStripMenuItem";
-            this.studentStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.studentStatusToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.studentStatusToolStripMenuItem.Text = "Student Status";
             this.studentStatusToolStripMenuItem.Click += new System.EventHandler(this.studentStatusToolStripMenuItem_Click);
             // 
@@ -162,6 +164,13 @@
             this.dgvMisc.Size = new System.Drawing.Size(526, 140);
             this.dgvMisc.TabIndex = 3;
             // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
             // Frm_Psits_DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,5 +211,6 @@
         private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvMisc;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }

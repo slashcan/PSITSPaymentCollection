@@ -124,6 +124,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Frm_Add_Event";
             this.Text = "Frm_Add_Event";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Add_Event_FormClosed);
             this.Load += new System.EventHandler(this.Frm_Add_Event_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

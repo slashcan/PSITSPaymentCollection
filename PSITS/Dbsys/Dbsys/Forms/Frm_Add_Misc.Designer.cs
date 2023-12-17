@@ -44,6 +44,7 @@
             this.addMiscButton.TabIndex = 10;
             this.addMiscButton.Text = "Add";
             this.addMiscButton.UseVisualStyleBackColor = true;
+            this.addMiscButton.Click += new System.EventHandler(this.addMiscButton_Click);
             // 
             // priceTxt
             // 
@@ -102,6 +103,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Frm_Add_Misc";
             this.Text = "Frm_Add_Misc";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Add_Misc_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

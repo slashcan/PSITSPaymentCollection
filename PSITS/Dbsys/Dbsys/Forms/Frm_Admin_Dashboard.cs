@@ -19,7 +19,21 @@ namespace Dbsys.Forms
             InitializeComponent();
             //
             userRepo = new UserRepository();
-            //
+
+            loadEvents();
+            loadMisc();
+        }
+
+        public void loadEvents()
+        {
+            dgvEvent.DataSource = userRepo.ShowEvents();
+            dgvEvent.Columns["eventId"].Visible = false;
+        }
+
+        public void loadMisc()
+        {
+            dgvMisc.DataSource = userRepo.ShowMisc();
+            dgvMisc.Columns["miscId"].Visible = false;
         }
 
         private void Frm_Admin_Dashboard_Load(object sender, EventArgs e)
@@ -64,6 +78,17 @@ namespace Dbsys.Forms
         }
 
         private void dgvEvent_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Frm_Login().Show();
+            this.Hide();
+        }
+
+        private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dbsys.AppData;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Dbsys
 {
@@ -37,56 +38,6 @@ namespace Dbsys
             return retValue;
         }
 
-
-
-        public ErrorCode UpdateUser(int? userId, UserAccount aUserAccount, ref String outMessage)
-        {
-            ErrorCode retValue = ErrorCode.Error;
-            try
-            {
-                // Find the user with id
-                UserAccount user = db.UserAccount.Where(m => m.userId == userId).FirstOrDefault();
-                // Update the value of the retrieved user
-                user.userName = aUserAccount.userName;
-                user.userPassword = aUserAccount.userPassword;
-
-                db.SaveChanges();       // Execute the update
-
-                outMessage = "Updated";
-                retValue = ErrorCode.Success;
-            }
-            catch (Exception ex)
-            {
-                outMessage = ex.Message;
-                retValue = ErrorCode.Success;
-                MessageBox.Show(ex.Message);
-            }
-            return retValue;
-
-        }
-
-        public ErrorCode RemoveUser(int? userId, ref String outMessage)
-        {
-            ErrorCode retValue = ErrorCode.Error;
-            try
-            {
-                UserAccount user = db.UserAccount.Where(m => m.userId == userId).FirstOrDefault();
-                // Remove the user
-                db.UserAccount.Remove(user);
-                db.SaveChanges();       // Execute the update
-
-                outMessage = "Deleted";
-                retValue = ErrorCode.Success;
-            }
-            catch (Exception ex)
-            {
-                outMessage = ex.Message;
-                retValue = ErrorCode.Error;
-                MessageBox.Show(ex.Message);
-            }
-            return retValue;
-        }
-
         public ErrorCode CreateUserUsingStoredProf(String username, String password, int role, String status, int createdBy, ref String szResponse)
         {
             try
@@ -95,18 +46,64 @@ namespace Dbsys
                 {
                     // Call the create stored procedure
                     //
-                    db.sp_CreateUser(username, password, role, status, createdBy);
+                    db.sp_InsertUserAccount(username, password, role, status, createdBy);
                     szResponse = "Created";
                     return ErrorCode.Success;
                 }
             }
             catch (Exception ex)
             {
-                szResponse = ex.Message;
-                return ErrorCode.Error;    
+                szResponse = "Error";
+                return ErrorCode.Error;
             }
         }
 
+
+        public ErrorCode UpdateUser(int? userId, String username, String password, int role, String status, ref String outMessage)
+        {
+           
+            try
+            {
+                using (db = new DBSYSEntities())
+                {
+                    // Call the create stored procedure
+                    //
+                    db.sp_UpdateUser(userId, username, password, role, status);
+                    outMessage = "Updated";
+                    return ErrorCode.Success;
+                }
+            }
+            catch (Exception ex)
+            {
+                outMessage = "Error";
+                return ErrorCode.Error;
+            }
+            
+
+        }
+
+        public ErrorCode RemoveUser(int? userId, ref String outMessage)
+        {
+      
+            try
+            {
+                using (db = new DBSYSEntities())
+                {
+                    // Remove the user
+                    db.sp_DeleteUserAccount(userId);
+                outMessage = "Deleted";
+                return ErrorCode.Success;
+                }
+            }
+            catch (Exception ex)
+            {
+                outMessage = "Error";
+                return ErrorCode.Error;
+            }
+        
+        }
+
+ 
 
         public UserAccount GetUserByUsername(String username)
         {

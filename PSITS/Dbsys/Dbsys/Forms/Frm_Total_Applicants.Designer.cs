@@ -66,9 +66,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(88, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Event Name:";
+            this.label2.Text = "Year Level";
             // 
             // Frm_Total_Applicants
             // 

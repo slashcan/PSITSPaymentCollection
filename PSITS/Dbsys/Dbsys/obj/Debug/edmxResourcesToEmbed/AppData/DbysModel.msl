@@ -55,7 +55,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_newUser" FunctionName="DBSYSModel.Store.sp_newUser" />
     <EntitySetMapping Name="YearLevel">
       <EntityTypeMapping TypeName="DBSYSModel.YearLevel">
         <MappingFragment StoreEntitySet="YearLevel">
@@ -167,5 +166,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_InsertUserAccount" FunctionName="DBSYSModel.Store.sp_InsertUserAccount" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateUser" FunctionName="DBSYSModel.Store.sp_UpdateUser" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteUserAccount" FunctionName="DBSYSModel.Store.sp_DeleteUserAccount" />
   </EntityContainerMapping>
 </Mapping>

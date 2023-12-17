@@ -21,6 +21,7 @@
       <Parameter Name="username" Mode="In" Type="String" />
       <Parameter Name="password" Mode="In" Type="String" />
       <Parameter Name="role" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
       <Parameter Name="createdBy" Mode="In" Type="Int32" />
     </FunctionImport>
     <EntitySet Name="YearLevel" EntityType="DBSYSModel.YearLevel" />
@@ -34,6 +35,30 @@
     <EntitySet Name="vw_total_applicants_2ndyr" EntityType="DBSYSModel.vw_total_applicants_2ndyr" />
     <EntitySet Name="vw_total_applicants_3rdyr" EntityType="DBSYSModel.vw_total_applicants_3rdyr" />
     <EntitySet Name="vw_total_applicants_4thyr" EntityType="DBSYSModel.vw_total_applicants_4thyr" />
+    <FunctionImport Name="InsertUserAccount">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="role" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="createdBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InsertUserAccount">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="role" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="createdBy" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UpdateUser">
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="role" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DeleteUserAccount">
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Role">
     <Key>

@@ -39,6 +39,7 @@
             this.studentSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resiteredStudentsForToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.miscToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.statusDgv)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -101,14 +102,14 @@
             // eventsToolStripMenuItem
             // 
             this.eventsToolStripMenuItem.Name = "eventsToolStripMenuItem";
-            this.eventsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eventsToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.eventsToolStripMenuItem.Text = "Events";
             this.eventsToolStripMenuItem.Click += new System.EventHandler(this.eventsToolStripMenuItem_Click);
             // 
             // miscToolStripMenuItem
             // 
             this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
-            this.miscToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miscToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.miscToolStripMenuItem.Text = "Misc";
             this.miscToolStripMenuItem.Click += new System.EventHandler(this.miscToolStripMenuItem_Click);
             // 
@@ -121,7 +122,8 @@
             // resiteredStudentsForToolStripMenuItem
             // 
             this.resiteredStudentsForToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eventsToolStripMenuItem1});
+            this.eventsToolStripMenuItem1,
+            this.miscToolStripMenuItem1});
             this.resiteredStudentsForToolStripMenuItem.Name = "resiteredStudentsForToolStripMenuItem";
             this.resiteredStudentsForToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.resiteredStudentsForToolStripMenuItem.Text = "Resitered Students for..";
@@ -132,6 +134,13 @@
             this.eventsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.eventsToolStripMenuItem1.Text = "Events";
             this.eventsToolStripMenuItem1.Click += new System.EventHandler(this.eventsToolStripMenuItem1_Click);
+            // 
+            // miscToolStripMenuItem1
+            // 
+            this.miscToolStripMenuItem1.Name = "miscToolStripMenuItem1";
+            this.miscToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.miscToolStripMenuItem1.Text = "Misc";
+            this.miscToolStripMenuItem1.Click += new System.EventHandler(this.miscToolStripMenuItem1_Click);
             // 
             // Frm_Student_Status
             // 
@@ -167,5 +176,6 @@
         private System.Windows.Forms.ToolStripMenuItem studentSearchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resiteredStudentsForToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem miscToolStripMenuItem1;
     }
 }

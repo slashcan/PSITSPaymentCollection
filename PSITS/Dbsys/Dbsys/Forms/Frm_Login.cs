@@ -98,5 +98,10 @@ namespace Dbsys
             //    txtUsername.Text = frm.username;
             //}
         }
+
+        private void Frm_Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
