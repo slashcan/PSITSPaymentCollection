@@ -49,7 +49,7 @@ namespace Dbsys.Forms
 
         private void Frm_Add_Event_FormClosed(object sender, FormClosedEventArgs e)
         {
-            new Frm_Psits_DashBoard().Show();
+           
         }
     }
 }

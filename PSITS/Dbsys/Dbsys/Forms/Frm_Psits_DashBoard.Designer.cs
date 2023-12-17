@@ -37,11 +37,11 @@
             this.checkStudentStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvEvents = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvMisc = new System.Windows.Forms.DataGridView();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisc)).BeginInit();
@@ -85,7 +85,7 @@
             this.eventToolStripMenuItem,
             this.miscToolStripMenuItem});
             this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.createNewToolStripMenuItem.Text = "New";
             this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
             // 
@@ -108,7 +108,7 @@
             this.checkStudentStatusToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.studentStatusToolStripMenuItem});
             this.checkStudentStatusToolStripMenuItem.Name = "checkStudentStatusToolStripMenuItem";
-            this.checkStudentStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkStudentStatusToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.checkStudentStatusToolStripMenuItem.Text = "Search";
             this.checkStudentStatusToolStripMenuItem.Click += new System.EventHandler(this.checkStudentStatusToolStripMenuItem_Click);
             // 
@@ -122,9 +122,16 @@
             // paymentToolStripMenuItem
             // 
             this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
-            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.paymentToolStripMenuItem.Text = "Receive Payment";
             this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // dgvEvents
             // 
@@ -138,7 +145,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 55);
+            this.label4.Location = new System.Drawing.Point(26, 64);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 18);
             this.label4.TabIndex = 2;
@@ -163,13 +170,6 @@
             this.dgvMisc.Name = "dgvMisc";
             this.dgvMisc.Size = new System.Drawing.Size(526, 140);
             this.dgvMisc.TabIndex = 3;
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // Frm_Psits_DashBoard
             // 

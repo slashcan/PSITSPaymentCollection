@@ -22,7 +22,7 @@ namespace Dbsys.Forms
 
         private void Frm_Add_Misc_FormClosed(object sender, FormClosedEventArgs e)
         {
-            new Frm_Psits_DashBoard().Show();
+
         }
 
         private void addMiscButton_Click(object sender, EventArgs e)

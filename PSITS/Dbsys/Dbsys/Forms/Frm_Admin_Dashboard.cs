@@ -92,5 +92,22 @@ namespace Dbsys.Forms
         {
 
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eventToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new Frm_Edit_Event().Show();
+            this.Hide();
+        }
+
+        private void miscToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new Frm_Edit_Misc().Show();
+            this.Hide();
+        }
     }
 }

@@ -49,6 +49,8 @@
             this.dgvMisc = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.eventToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.miscToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.statusStripBottom.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -158,9 +160,13 @@
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eventToolStripMenuItem1,
+            this.miscToolStripMenuItem1});
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Text = "Edit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -240,6 +246,20 @@
             this.label5.Text = "Admin Dashboard";
             this.label5.Click += new System.EventHandler(this.label1_Click);
             // 
+            // eventToolStripMenuItem1
+            // 
+            this.eventToolStripMenuItem1.Name = "eventToolStripMenuItem1";
+            this.eventToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.eventToolStripMenuItem1.Text = "Event";
+            this.eventToolStripMenuItem1.Click += new System.EventHandler(this.eventToolStripMenuItem1_Click);
+            // 
+            // miscToolStripMenuItem1
+            // 
+            this.miscToolStripMenuItem1.Name = "miscToolStripMenuItem1";
+            this.miscToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.miscToolStripMenuItem1.Text = "Misc";
+            this.miscToolStripMenuItem1.Click += new System.EventHandler(this.miscToolStripMenuItem1_Click);
+            // 
             // Frm_Admin_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,5 +315,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eventToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem miscToolStripMenuItem1;
     }
 }

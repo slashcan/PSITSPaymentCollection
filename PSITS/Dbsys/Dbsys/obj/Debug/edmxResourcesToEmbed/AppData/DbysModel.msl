@@ -169,5 +169,9 @@
     <FunctionImportMapping FunctionImportName="sp_InsertUserAccount" FunctionName="DBSYSModel.Store.sp_InsertUserAccount" />
     <FunctionImportMapping FunctionImportName="sp_UpdateUser" FunctionName="DBSYSModel.Store.sp_UpdateUser" />
     <FunctionImportMapping FunctionImportName="sp_DeleteUserAccount" FunctionName="DBSYSModel.Store.sp_DeleteUserAccount" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateEvent" FunctionName="DBSYSModel.Store.sp_UpdateEvent" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateMisc" FunctionName="DBSYSModel.Store.sp_UpdateMisc" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteEvent" FunctionName="DBSYSModel.Store.sp_DeleteEvent" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteMisc" FunctionName="DBSYSModel.Store.sp_DeleteMisc" />
   </EntityContainerMapping>
 </Mapping>

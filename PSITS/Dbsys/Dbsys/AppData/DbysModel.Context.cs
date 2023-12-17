@@ -240,6 +240,79 @@ public partial class DBSYSEntities : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteUserAccount", userIdParameter);
     }
 
+
+    public virtual int sp_UpdateEvent(Nullable<int> eventId, string eventName, Nullable<System.DateTime> eventDate, Nullable<int> eventPrice)
+    {
+
+        var eventIdParameter = eventId.HasValue ?
+            new ObjectParameter("eventId", eventId) :
+            new ObjectParameter("eventId", typeof(int));
+
+
+        var eventNameParameter = eventName != null ?
+            new ObjectParameter("eventName", eventName) :
+            new ObjectParameter("eventName", typeof(string));
+
+
+        var eventDateParameter = eventDate.HasValue ?
+            new ObjectParameter("eventDate", eventDate) :
+            new ObjectParameter("eventDate", typeof(System.DateTime));
+
+
+        var eventPriceParameter = eventPrice.HasValue ?
+            new ObjectParameter("eventPrice", eventPrice) :
+            new ObjectParameter("eventPrice", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UpdateEvent", eventIdParameter, eventNameParameter, eventDateParameter, eventPriceParameter);
+    }
+
+
+    public virtual int sp_UpdateMisc(Nullable<int> miscId, string miscName, Nullable<int> miscPrice)
+    {
+
+        var miscIdParameter = miscId.HasValue ?
+            new ObjectParameter("miscId", miscId) :
+            new ObjectParameter("miscId", typeof(int));
+
+
+        var miscNameParameter = miscName != null ?
+            new ObjectParameter("miscName", miscName) :
+            new ObjectParameter("miscName", typeof(string));
+
+
+        var miscPriceParameter = miscPrice.HasValue ?
+            new ObjectParameter("miscPrice", miscPrice) :
+            new ObjectParameter("miscPrice", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UpdateMisc", miscIdParameter, miscNameParameter, miscPriceParameter);
+    }
+
+
+    public virtual int sp_DeleteEvent(Nullable<int> eventId)
+    {
+
+        var eventIdParameter = eventId.HasValue ?
+            new ObjectParameter("eventId", eventId) :
+            new ObjectParameter("eventId", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteEvent", eventIdParameter);
+    }
+
+
+    public virtual int sp_DeleteMisc(Nullable<int> miscId)
+    {
+
+        var miscIdParameter = miscId.HasValue ?
+            new ObjectParameter("miscId", miscId) :
+            new ObjectParameter("miscId", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteMisc", miscIdParameter);
+    }
+
 }
 
 }

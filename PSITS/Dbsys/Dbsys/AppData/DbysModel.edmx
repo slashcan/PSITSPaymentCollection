@@ -182,6 +182,12 @@ warning 6002: The table/view 'DBSYS.dbo.vw_total_misc_sales' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="sp_DeleteEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="eventId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_DeleteMisc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="miscId" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_DeleteUserAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="userId" Type="int" Mode="In" />
         </Function>
@@ -191,6 +197,17 @@ warning 6002: The table/view 'DBSYS.dbo.vw_total_misc_sales' does not have a pri
           <Parameter Name="role" Type="int" Mode="In" />
           <Parameter Name="status" Type="nvarchar" Mode="In" />
           <Parameter Name="createdBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_UpdateEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="eventId" Type="int" Mode="In" />
+          <Parameter Name="eventName" Type="nvarchar" Mode="In" />
+          <Parameter Name="eventDate" Type="date" Mode="In" />
+          <Parameter Name="eventPrice" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_UpdateMisc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="miscId" Type="int" Mode="In" />
+          <Parameter Name="miscName" Type="nvarchar" Mode="In" />
+          <Parameter Name="miscPrice" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="userId" Type="int" Mode="In" />
@@ -325,7 +342,24 @@ FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
             <Parameter Name="status" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_DeleteUserAccount">
-            <Parameter Name="userId" Mode="In" Type="Int32" />
+          <Parameter Name="userId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UpdateEvent">
+            <Parameter Name="eventId" Mode="In" Type="Int32" />
+            <Parameter Name="eventName" Mode="In" Type="String" />
+            <Parameter Name="eventDate" Mode="In" Type="DateTime" />
+            <Parameter Name="eventPrice" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UpdateMisc">
+            <Parameter Name="miscId" Mode="In" Type="Int32" />
+            <Parameter Name="miscName" Mode="In" Type="String" />
+            <Parameter Name="miscPrice" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_DeleteEvent">
+          <Parameter Name="eventId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_DeleteMisc">
+            <Parameter Name="miscId" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Role">
@@ -667,6 +701,10 @@ FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
           <FunctionImportMapping FunctionImportName="sp_InsertUserAccount" FunctionName="DBSYSModel.Store.sp_InsertUserAccount" />
           <FunctionImportMapping FunctionImportName="sp_UpdateUser" FunctionName="DBSYSModel.Store.sp_UpdateUser" />
           <FunctionImportMapping FunctionImportName="sp_DeleteUserAccount" FunctionName="DBSYSModel.Store.sp_DeleteUserAccount" />
+          <FunctionImportMapping FunctionImportName="sp_UpdateEvent" FunctionName="DBSYSModel.Store.sp_UpdateEvent" />
+          <FunctionImportMapping FunctionImportName="sp_UpdateMisc" FunctionName="DBSYSModel.Store.sp_UpdateMisc" />
+          <FunctionImportMapping FunctionImportName="sp_DeleteEvent" FunctionName="DBSYSModel.Store.sp_DeleteEvent" />
+          <FunctionImportMapping FunctionImportName="sp_DeleteMisc" FunctionName="DBSYSModel.Store.sp_DeleteMisc" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

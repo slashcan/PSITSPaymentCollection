@@ -82,6 +82,50 @@ namespace Dbsys
 
         }
 
+        public ErrorCode UpdateEvent(int? userId, String eventName, DateTime eventDate, int price,  ref String outMessage)
+        {
+            
+            try
+            {
+                using (db = new DBSYSEntities())
+                {
+                    // Call the create stored procedure
+                    //
+                    db.sp_UpdateEvent(userId, eventName, eventDate, price);
+                    outMessage = "Updated";
+                    return ErrorCode.Success;
+                }
+            }
+            catch (Exception ex)
+            {
+                outMessage = "Error";
+                return ErrorCode.Error;
+            }
+        }
+
+        public ErrorCode UpdateMisc(int? userId, String miscName, int price, ref String outMessage)
+        {
+
+            try
+            {
+                using (db = new DBSYSEntities())
+                {
+                    // Call the create stored procedure
+                    //
+                    db.sp_UpdateMisc(userId, miscName, price);
+                    outMessage = "Updated";
+                    return ErrorCode.Success;
+                }
+            }
+            catch (Exception ex)
+            {
+                outMessage = "Error";
+                return ErrorCode.Error;
+            }
+
+
+        }
+
         public ErrorCode RemoveUser(int? userId, ref String outMessage)
         {
       
@@ -103,7 +147,48 @@ namespace Dbsys
         
         }
 
- 
+        public ErrorCode RemoveEvent(int? eventId, ref String outMessage)
+        {
+
+            try
+            {
+                using (db = new DBSYSEntities())
+                {
+                    // Remove the user
+                    db.sp_DeleteEvent(eventId);
+                    outMessage = "Deleted";
+                    return ErrorCode.Success;
+                }
+            }
+            catch (Exception ex)
+            {
+                outMessage = "Error";
+                return ErrorCode.Error;
+            }
+
+        }
+
+        public ErrorCode RemoveMisc(int? miscId, ref String outMessage)
+        {
+
+            try
+            {
+                using (db = new DBSYSEntities())
+                {
+                    // Remove the user
+                    db.sp_DeleteMisc(miscId);
+                    outMessage = "Deleted";
+                    return ErrorCode.Success;
+                }
+            }
+            catch (Exception ex)
+            {
+                outMessage = "Error";
+                return ErrorCode.Error;
+            }
+
+        }
+
 
         public UserAccount GetUserByUsername(String username)
         {

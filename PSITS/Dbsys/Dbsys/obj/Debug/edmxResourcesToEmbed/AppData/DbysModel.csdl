@@ -59,6 +59,23 @@
     <FunctionImport Name="sp_DeleteUserAccount">
       <Parameter Name="userId" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_UpdateEvent">
+      <Parameter Name="eventId" Mode="In" Type="Int32" />
+      <Parameter Name="eventName" Mode="In" Type="String" />
+      <Parameter Name="eventDate" Mode="In" Type="DateTime" />
+      <Parameter Name="eventPrice" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UpdateMisc">
+      <Parameter Name="miscId" Mode="In" Type="Int32" />
+      <Parameter Name="miscName" Mode="In" Type="String" />
+      <Parameter Name="miscPrice" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DeleteEvent">
+      <Parameter Name="eventId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DeleteMisc">
+      <Parameter Name="miscId" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Role">
     <Key>

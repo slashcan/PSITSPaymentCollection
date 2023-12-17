@@ -177,6 +177,12 @@ warning 6002: The table/view 'DBSYS.dbo.vw_total_misc_sales' does not have a pri
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="sp_DeleteEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="eventId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteMisc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="miscId" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_DeleteUserAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="userId" Type="int" Mode="In" />
   </Function>
@@ -186,6 +192,17 @@ warning 6002: The table/view 'DBSYS.dbo.vw_total_misc_sales' does not have a pri
     <Parameter Name="role" Type="int" Mode="In" />
     <Parameter Name="status" Type="nvarchar" Mode="In" />
     <Parameter Name="createdBy" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="eventId" Type="int" Mode="In" />
+    <Parameter Name="eventName" Type="nvarchar" Mode="In" />
+    <Parameter Name="eventDate" Type="date" Mode="In" />
+    <Parameter Name="eventPrice" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateMisc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="miscId" Type="int" Mode="In" />
+    <Parameter Name="miscName" Type="nvarchar" Mode="In" />
+    <Parameter Name="miscPrice" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="userId" Type="int" Mode="In" />
