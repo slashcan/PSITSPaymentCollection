@@ -182,5 +182,14 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MiscFilter" FunctionName="DBSYSModel.Store.sp_MiscFilter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSYSModel.sp_MiscFilter_Result">
+          <ScalarProperty Name="miscId" ColumnName="miscId" />
+          <ScalarProperty Name="Total_Buyers" ColumnName="Total Buyers" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

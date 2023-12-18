@@ -196,6 +196,9 @@ warning 6002: The table/view 'DBSYS.dbo.vw_total_misc_sales' does not have a pri
     <Parameter Name="status" Type="nvarchar" Mode="In" />
     <Parameter Name="createdBy" Type="int" Mode="In" />
   </Function>
+  <Function Name="sp_MiscFilter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="miscname" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="sp_UpdateEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="eventId" Type="int" Mode="In" />
     <Parameter Name="eventName" Type="nvarchar" Mode="In" />

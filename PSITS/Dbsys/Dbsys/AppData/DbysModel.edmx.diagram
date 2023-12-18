@@ -18,7 +18,7 @@
         <EntityTypeShape EntityType="DBSYSModel.payment" Width="1.5" PointX="7.625" PointY="0.875" />
         <EntityTypeShape EntityType="DBSYSModel.vw_total_event_sales" Width="1.875" PointX="9.875" PointY="6.125" />
         <EntityTypeShape EntityType="DBSYSModel.vw_total_misc_sales" Width="1.5" PointX="7.875" PointY="5.875" />
-        <EntityTypeShape EntityType="DBSYSModel.vw_total_applicants_1styr" Width="2" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DBSYSModel.vw_total_applicants_1styr" Width="2" PointX="0.5" PointY="8.75" />
         <EntityTypeShape EntityType="DBSYSModel.vw_total_applicants_2ndyr" Width="1.5" PointX="3" PointY="8.75" />
         <EntityTypeShape EntityType="DBSYSModel.vw_total_applicants_3rdyr" Width="1.5" PointX="4.5" PointY="8.75" />
         <EntityTypeShape EntityType="DBSYSModel.vw_total_applicants_4thyr" Width="1.5" PointX="6.125" PointY="8.75" />

@@ -63,3 +63,31 @@ INSERT [dbo].[Role] ([roleId], [roleName], [roleDescription]) VALUES (1, N'Stude
 INSERT [dbo].[Role] ([roleId], [roleName], [roleDescription]) VALUES (2, N'Teacher', N'Teacher')
 INSERT [dbo].[Role] ([roleId], [roleName], [roleDescription]) VALUES (3, N'Admin', N'Admin')
 SET IDENTITY_INSERT [dbo].[Role] OFF
+
+
+CREATE PROCEDURE sp_EventFilter
+	@eventname varchar(50)
+AS
+BEGIN
+SELECT        e.eventId, COUNT(p.yearLvl) AS [Total Applicants], p.eventName AS Event
+FROM           PaymentForEvent AS p 
+INNER JOIN [Events] AS e ON p.eventName = e.eventName
+WHERE        (p.eventName = @eventname)
+GROUP BY p.eventName, e.eventId
+END
+
+EXEC sp_EventFilter 'Xmas Party'
+
+
+CREATE PROCEDURE sp_MiscFilter
+	@miscname varchar(50)
+AS
+BEGIN
+SELECT        m.miscId, COUNT(p.yearLvl) AS [Total Buyers], p.miscName AS 'Name'
+FROM           PaymentForMisc AS p 
+INNER JOIN Misc AS m ON p.miscName = m.miscName
+WHERE        (p.miscName = @miscname)
+GROUP BY p.miscName, m.miscId
+END
+
+EXEC sp_EventFilter 'Lanyard'

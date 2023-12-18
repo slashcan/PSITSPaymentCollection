@@ -11,18 +11,24 @@ using System.Windows.Forms;
 
 namespace Dbsys.Forms
 {
-    public partial class Frm_Add_Misc : Form
+   
+    public partial class Frm_Add_Misc_For_Admin : Form
     {
         DBSYSEntities db;
-        public Frm_Add_Misc()
+        public Frm_Add_Misc_For_Admin()
         {
             InitializeComponent();
-            db= new DBSYSEntities();
+            db = new DBSYSEntities();
         }
 
-        private void Frm_Add_Misc_FormClosed(object sender, FormClosedEventArgs e)
+        private void Frm_Add_Misc_For_Admin_Load(object sender, EventArgs e)
         {
-            new Frm_Psits_DashBoard().Show();
+            
+        }
+
+        private void Frm_Add_Misc_For_Admin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new Frm_Admin_Dashboard().Show();
             this.Hide();
         }
 

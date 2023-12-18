@@ -79,6 +79,9 @@
     <FunctionImport Name="sp_EventFilter" ReturnType="Collection(DBSYSModel.sp_EventFilter_Result)">
       <Parameter Name="eventname" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="sp_MiscFilter" ReturnType="Collection(DBSYSModel.sp_MiscFilter_Result)">
+      <Parameter Name="miscname" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Role">
     <Key>
@@ -249,5 +252,10 @@
     <Property Type="Int32" Name="eventId" Nullable="false" />
     <Property Type="Int32" Name="Total_Applicants" Nullable="true" />
     <Property Type="String" Name="Event" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_MiscFilter_Result">
+    <Property Type="Int32" Name="miscId" Nullable="false" />
+    <Property Type="Int32" Name="Total_Buyers" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
   </ComplexType>
 </Schema>

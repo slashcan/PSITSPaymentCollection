@@ -70,7 +70,8 @@ namespace Dbsys.Forms
 
         private void miscToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Frm_Add_Misc().Show();
+            new Frm_Add_Misc_For_Admin().Show();
+            this.Hide();
         }
 
         private void studentStatusToolStripMenuItem_Click(object sender, EventArgs e)

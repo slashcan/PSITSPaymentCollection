@@ -201,6 +201,9 @@ warning 6002: The table/view 'DBSYS.dbo.vw_total_misc_sales' does not have a pri
           <Parameter Name="status" Type="nvarchar" Mode="In" />
           <Parameter Name="createdBy" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_MiscFilter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="miscname" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_UpdateEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="eventId" Type="int" Mode="In" />
           <Parameter Name="eventName" Type="nvarchar" Mode="In" />
@@ -365,7 +368,10 @@ FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
           <Parameter Name="miscId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_EventFilter" ReturnType="Collection(DBSYSModel.sp_EventFilter_Result)">
-            <Parameter Name="eventname" Mode="In" Type="String" />
+          <Parameter Name="eventname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_MiscFilter" ReturnType="Collection(DBSYSModel.sp_MiscFilter_Result)">
+            <Parameter Name="miscname" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Role">
@@ -537,6 +543,11 @@ FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
           <Property Type="Int32" Name="eventId" Nullable="false" />
           <Property Type="Int32" Name="Total_Applicants" Nullable="true" />
           <Property Type="String" Name="Event" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_MiscFilter_Result">
+          <Property Type="Int32" Name="miscId" Nullable="false" />
+          <Property Type="Int32" Name="Total_Buyers" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -722,6 +733,15 @@ FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
                 <ScalarProperty Name="eventId" ColumnName="eventId" />
                 <ScalarProperty Name="Total_Applicants" ColumnName="Total Applicants" />
                 <ScalarProperty Name="Event" ColumnName="Event" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_MiscFilter" FunctionName="DBSYSModel.Store.sp_MiscFilter">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBSYSModel.sp_MiscFilter_Result">
+                <ScalarProperty Name="miscId" ColumnName="miscId" />
+                <ScalarProperty Name="Total_Buyers" ColumnName="Total Buyers" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

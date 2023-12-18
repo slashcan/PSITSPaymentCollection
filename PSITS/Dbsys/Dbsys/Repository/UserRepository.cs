@@ -163,6 +163,43 @@ namespace Dbsys
             }
         }
 
+        public DataTable FilterMisc(string miscname, ref String outMessage)
+        {
+            try
+            {
+                using (db = new DBSYSEntities())
+                {
+                    // Create a DataTable to store the results
+                    DataTable dataTable = new DataTable();
+
+                    // Call the stored procedure and fill the DataTable
+                    using (var command = db.Database.Connection.CreateCommand())
+                    {
+                        command.CommandText = "sp_MiscFilter";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Add parameters if necessary
+                        command.Parameters.Add(new SqlParameter("@miscname", miscname));
+
+                        db.Database.Connection.Open();
+                        using (var reader = command.ExecuteReader())
+                        {
+                            dataTable.Load(reader);
+                        }
+                    }
+
+                    outMessage = "Sorted";
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                outMessage = "Error: " + ex.Message;
+                return null; // Return null to indicate an error
+            }
+        }
+
+
 
         public ErrorCode RemoveUser(int? userId, ref String outMessage)
         {

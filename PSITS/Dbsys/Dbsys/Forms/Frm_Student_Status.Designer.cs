@@ -40,6 +40,8 @@
             this.resiteredStudentsForToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.miscToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.registeredPerYearLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eventsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.statusDgv)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +87,8 @@
             this.customReportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.totalSalesForToolStripMenuItem,
             this.studentSearchToolStripMenuItem,
-            this.resiteredStudentsForToolStripMenuItem});
+            this.resiteredStudentsForToolStripMenuItem,
+            this.registeredPerYearLevelToolStripMenuItem});
             this.customReportsToolStripMenuItem.Name = "customReportsToolStripMenuItem";
             this.customReportsToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
             this.customReportsToolStripMenuItem.Text = "Custom Reports";
@@ -96,7 +99,7 @@
             this.eventsToolStripMenuItem,
             this.miscToolStripMenuItem});
             this.totalSalesForToolStripMenuItem.Name = "totalSalesForToolStripMenuItem";
-            this.totalSalesForToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.totalSalesForToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.totalSalesForToolStripMenuItem.Text = "Total Sales for..";
             // 
             // eventsToolStripMenuItem
@@ -116,7 +119,7 @@
             // studentSearchToolStripMenuItem
             // 
             this.studentSearchToolStripMenuItem.Name = "studentSearchToolStripMenuItem";
-            this.studentSearchToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.studentSearchToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.studentSearchToolStripMenuItem.Text = "Student Search";
             // 
             // resiteredStudentsForToolStripMenuItem
@@ -125,7 +128,7 @@
             this.eventsToolStripMenuItem1,
             this.miscToolStripMenuItem1});
             this.resiteredStudentsForToolStripMenuItem.Name = "resiteredStudentsForToolStripMenuItem";
-            this.resiteredStudentsForToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.resiteredStudentsForToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.resiteredStudentsForToolStripMenuItem.Text = "Resitered Students for..";
             // 
             // eventsToolStripMenuItem1
@@ -141,6 +144,22 @@
             this.miscToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.miscToolStripMenuItem1.Text = "Misc";
             this.miscToolStripMenuItem1.Click += new System.EventHandler(this.miscToolStripMenuItem1_Click);
+            // 
+            // registeredPerYearLevelToolStripMenuItem
+            // 
+            this.registeredPerYearLevelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eventsToolStripMenuItem2});
+            this.registeredPerYearLevelToolStripMenuItem.Name = "registeredPerYearLevelToolStripMenuItem";
+            this.registeredPerYearLevelToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.registeredPerYearLevelToolStripMenuItem.Text = "Registered Per Year Level";
+            this.registeredPerYearLevelToolStripMenuItem.Click += new System.EventHandler(this.registeredPerYearLevelToolStripMenuItem_Click);
+            // 
+            // eventsToolStripMenuItem2
+            // 
+            this.eventsToolStripMenuItem2.Name = "eventsToolStripMenuItem2";
+            this.eventsToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.eventsToolStripMenuItem2.Text = "Events";
+            this.eventsToolStripMenuItem2.Click += new System.EventHandler(this.eventsToolStripMenuItem2_Click);
             // 
             // Frm_Student_Status
             // 
@@ -177,5 +196,7 @@
         private System.Windows.Forms.ToolStripMenuItem resiteredStudentsForToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem miscToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem registeredPerYearLevelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eventsToolStripMenuItem2;
     }
 }

@@ -91,6 +91,9 @@
     <Compile Include="AppData\sp_EventFilter_Result.cs">
       <DependentUpon>DbysModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppData\sp_MiscFilter_Result.cs">
+      <DependentUpon>DbysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\UserAccount.cs">
       <DependentUpon>DbysModel.tt</DependentUpon>
     </Compile>
@@ -139,6 +142,12 @@
     <Compile Include="Forms\Frm_Add_Misc.Designer.cs">
       <DependentUpon>Frm_Add_Misc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_Add_Misc_For_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Add_Misc_For_Admin.Designer.cs">
+      <DependentUpon>Frm_Add_Misc_For_Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_Admin_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +165,12 @@
     </Compile>
     <Compile Include="Forms\Frm_Edit_Misc.Designer.cs">
       <DependentUpon>Frm_Edit_Misc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Per_Yr_LvL_Event_Applicant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Per_Yr_LvL_Event_Applicant.Designer.cs">
+      <DependentUpon>Frm_Per_Yr_LvL_Event_Applicant.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Receive_Payment.cs">
       <SubType>Form</SubType>
@@ -187,11 +202,17 @@
     <Compile Include="Forms\Frm_Student_Status.Designer.cs">
       <DependentUpon>Frm_Student_Status.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Total_Applicants.cs">
+    <Compile Include="Forms\Frm_Total_Event_Applicants.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Total_Applicants.Designer.cs">
-      <DependentUpon>Frm_Total_Applicants.cs</DependentUpon>
+    <Compile Include="Forms\Frm_Total_Event_Applicants.Designer.cs">
+      <DependentUpon>Frm_Total_Event_Applicants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Total_Misc_Applicants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Total_Misc_Applicants.Designer.cs">
+      <DependentUpon>Frm_Total_Misc_Applicants.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Total_Sales_Events.cs">
       <SubType>Form</SubType>
@@ -232,6 +253,9 @@
     <EmbeddedResource Include="Forms\Frm_Add_Misc.resx">
       <DependentUpon>Frm_Add_Misc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Add_Misc_For_Admin.resx">
+      <DependentUpon>Frm_Add_Misc_For_Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Admin_Dashboard.resx">
       <DependentUpon>Frm_Admin_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Edit_Misc.resx">
       <DependentUpon>Frm_Edit_Misc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Per_Yr_LvL_Event_Applicant.resx">
+      <DependentUpon>Frm_Per_Yr_LvL_Event_Applicant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Psits_DashBoard.resx">
       <DependentUpon>Frm_Psits_DashBoard.cs</DependentUpon>
@@ -256,8 +283,11 @@
     <EmbeddedResource Include="Forms\Frm_Student_Status.resx">
       <DependentUpon>Frm_Student_Status.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Total_Applicants.resx">
-      <DependentUpon>Frm_Total_Applicants.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Frm_Total_Event_Applicants.resx">
+      <DependentUpon>Frm_Total_Event_Applicants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Total_Misc_Applicants.resx">
+      <DependentUpon>Frm_Total_Misc_Applicants.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Total_Sales_Events.resx">
       <DependentUpon>Frm_Total_Sales_Events.cs</DependentUpon>
