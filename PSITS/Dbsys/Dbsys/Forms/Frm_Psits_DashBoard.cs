@@ -45,12 +45,13 @@ namespace Dbsys.Forms
         {
             new Frm_Add_Event().Show();
             this.Hide();
+            
         }
 
         private void miscToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Frm_Add_Misc().Show();
-            this.Hide();
+         
         }
 
         private void checkStudentStatusToolStripMenuItem_Click(object sender, EventArgs e)

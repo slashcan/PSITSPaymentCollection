@@ -24,36 +24,6 @@ namespace Dbsys.Forms
 
         private void btnConfirmPayment_Click(object sender, EventArgs e)
         {
-            //if (String.IsNullOrEmpty(txtUsername.Text))
-            //{
-            //    errorProvider1.SetError(txtUsername, "Empty field");
-            //    return;
-            //}
-            //if (String.IsNullOrEmpty(txtPassword.Text))
-            //{
-            //    errorProvider1.Clear();
-            //    errorProvider1.SetError(txtPassword, "Empty field");
-            //    return;
-            //}
-            //if (String.IsNullOrEmpty(txtRepassword.Text))
-            //{
-            //    errorProvider1.Clear();
-            //    errorProvider1.SetError(txtPassword, "Empty field");
-            //    return;
-            //}
-
-            //if (!txtPassword.Text.Equals(txtRepassword.Text))
-            //{
-            //    errorProvider1.Clear();
-            //    errorProvider1.SetError(txtRepassword, "Password not match");
-            //    return;
-            //}
-            // int code = 123;
-            // send email verificode (code)
-            // send sms otp (code)
-
-            // find the user id
-            // code input equal db. useraccoutn code
 
             if(eventRadio.Checked)
             {
@@ -64,7 +34,9 @@ namespace Dbsys.Forms
                     newpayment.eventName = cbboxEvent.Text;
                     newpayment.paymentDate = paymentDay.Value;
                     newpayment.eventPrice = Convert.ToInt32(txtAmount.Text);
-                db.PaymentForEvent.Add(newpayment);         
+                db.PaymentForEvent.Add(newpayment);
+
+                db.SaveChanges();
 
                 payment overallpayment = new payment();
 
@@ -75,6 +47,7 @@ namespace Dbsys.Forms
                     overallpayment.paymentDate = paymentDay.Value;
                     overallpayment.eventPrice = Convert.ToInt32(txtAmount.Text);
                 db.payment.Add(overallpayment);
+              
                 db.SaveChanges();
 
 

@@ -191,6 +191,9 @@ warning 6002: The table/view 'DBSYS.dbo.vw_total_misc_sales' does not have a pri
         <Function Name="sp_DeleteUserAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="userId" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_EventFilter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="eventname" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_InsertUserAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="username" Type="nvarchar" Mode="In" />
           <Parameter Name="password" Type="nvarchar" Mode="In" />
@@ -359,7 +362,10 @@ FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
           <Parameter Name="eventId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_DeleteMisc">
-            <Parameter Name="miscId" Mode="In" Type="Int32" />
+          <Parameter Name="miscId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_EventFilter" ReturnType="Collection(DBSYSModel.sp_EventFilter_Result)">
+            <Parameter Name="eventname" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Role">
@@ -527,6 +533,11 @@ FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
           <Property Name="C4th_Year_Applicants" Type="Int32" />
           <Property Name="Event" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="sp_EventFilter_Result">
+          <Property Type="Int32" Name="eventId" Nullable="false" />
+          <Property Type="Int32" Name="Total_Applicants" Nullable="true" />
+          <Property Type="String" Name="Event" Nullable="true" MaxLength="50" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -705,6 +716,15 @@ FROM [dbo].[vw_total_misc_sales] AS [vw_total_misc_sales]</DefiningQuery>
           <FunctionImportMapping FunctionImportName="sp_UpdateMisc" FunctionName="DBSYSModel.Store.sp_UpdateMisc" />
           <FunctionImportMapping FunctionImportName="sp_DeleteEvent" FunctionName="DBSYSModel.Store.sp_DeleteEvent" />
           <FunctionImportMapping FunctionImportName="sp_DeleteMisc" FunctionName="DBSYSModel.Store.sp_DeleteMisc" />
+          <FunctionImportMapping FunctionImportName="sp_EventFilter" FunctionName="DBSYSModel.Store.sp_EventFilter">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBSYSModel.sp_EventFilter_Result">
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+                <ScalarProperty Name="Total_Applicants" ColumnName="Total Applicants" />
+                <ScalarProperty Name="Event" ColumnName="Event" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

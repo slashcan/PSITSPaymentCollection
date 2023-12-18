@@ -96,3 +96,4 @@ C:\Users\slash\OneDrive\Documents\GitHub\PSITSPaymentCollection\PSITS\Dbsys\Dbsy
 C:\Users\slash\OneDrive\Documents\GitHub\PSITSPaymentCollection\PSITS\Dbsys\Dbsys\obj\Debug\Dbsys.Forms.Frm_Total_Applicants.resources
 C:\Users\slash\OneDrive\Documents\GitHub\PSITSPaymentCollection\PSITS\Dbsys\Dbsys\obj\Debug\Dbsys.Forms.Frm_Edit_Event.resources
 C:\Users\slash\OneDrive\Documents\GitHub\PSITSPaymentCollection\PSITS\Dbsys\Dbsys\obj\Debug\Dbsys.Forms.Frm_Edit_Misc.resources
+C:\Users\slash\OneDrive\Documents\GitHub\PSITSPaymentCollection\PSITS\Dbsys\Dbsys\obj\Debug\Dbsys.Forms.Frm_Add_Event_For_Admin.resources

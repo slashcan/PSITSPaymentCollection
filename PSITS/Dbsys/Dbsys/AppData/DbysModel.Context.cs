@@ -313,6 +313,18 @@ public partial class DBSYSEntities : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteMisc", miscIdParameter);
     }
 
+
+    public virtual ObjectResult<sp_EventFilter_Result> sp_EventFilter(string eventname)
+    {
+
+        var eventnameParameter = eventname != null ?
+            new ObjectParameter("eventname", eventname) :
+            new ObjectParameter("eventname", typeof(string));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_EventFilter_Result>("sp_EventFilter", eventnameParameter);
+    }
+
 }
 
 }

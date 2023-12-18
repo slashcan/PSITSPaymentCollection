@@ -8,23 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Dbsys.Forms
 {
-    public partial class Frm_Add_Event : Form
-    { 
+    public partial class Frm_Add_Event_For_Admin : Form
+    {
 
-    DBSYSEntities db; 
-
-    
-        public Frm_Add_Event()
+        DBSYSEntities db;
+        public Frm_Add_Event_For_Admin()
         {
             InitializeComponent();
-            db = new DBSYSEntities();
+            db= new DBSYSEntities();
         }
 
-        private void Frm_Add_Event_Load(object sender, EventArgs e)
+        private void Frm_Add_Event_For_Admin_Load(object sender, EventArgs e)
         {
 
         }
@@ -36,20 +33,21 @@ namespace Dbsys.Forms
             newEvent.eventDate = datePicker.Value;
             newEvent.eventPrice = Convert.ToInt32(priceTxt.Text);
 
-   
+
 
             db.Events.Add(newEvent);
             db.SaveChanges();
 
             eventTxt.Clear();
-            
+
             priceTxt.Clear();
             MessageBox.Show("Event Added!");
+
         }
 
-        private void Frm_Add_Event_FormClosed(object sender, FormClosedEventArgs e)
+        private void Frm_Add_Event_For_Admin_FormClosed(object sender, FormClosedEventArgs e)
         {
-           new Frm_Psits_DashBoard().Show();
+            new Frm_Admin_Dashboard().Show();
             this.Hide();
         }
     }

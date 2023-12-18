@@ -64,7 +64,8 @@ namespace Dbsys.Forms
 
         private void eventToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Frm_Add_Event().Show();
+            new Frm_Add_Event_For_Admin().Show();
+            this.Hide();
         }
 
         private void miscToolStripMenuItem_Click(object sender, EventArgs e)

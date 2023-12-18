@@ -88,6 +88,9 @@
     <Compile Include="AppData\Role.cs">
       <DependentUpon>DbysModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppData\sp_EventFilter_Result.cs">
+      <DependentUpon>DbysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\UserAccount.cs">
       <DependentUpon>DbysModel.tt</DependentUpon>
     </Compile>
@@ -123,6 +126,12 @@
     </Compile>
     <Compile Include="Forms\Frm_Add_Event.Designer.cs">
       <DependentUpon>Frm_Add_Event.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Add_Event_For_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Add_Event_For_Admin.Designer.cs">
+      <DependentUpon>Frm_Add_Event_For_Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Add_Misc.cs">
       <SubType>Form</SubType>
@@ -216,6 +225,9 @@
     <Compile Include="Utils\Func.cs" />
     <EmbeddedResource Include="Forms\Frm_Add_Event.resx">
       <DependentUpon>Frm_Add_Event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Add_Event_For_Admin.resx">
+      <DependentUpon>Frm_Add_Event_For_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Add_Misc.resx">
       <DependentUpon>Frm_Add_Misc.cs</DependentUpon>

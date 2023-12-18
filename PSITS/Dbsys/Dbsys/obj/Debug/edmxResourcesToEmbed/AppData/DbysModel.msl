@@ -173,5 +173,14 @@
     <FunctionImportMapping FunctionImportName="sp_UpdateMisc" FunctionName="DBSYSModel.Store.sp_UpdateMisc" />
     <FunctionImportMapping FunctionImportName="sp_DeleteEvent" FunctionName="DBSYSModel.Store.sp_DeleteEvent" />
     <FunctionImportMapping FunctionImportName="sp_DeleteMisc" FunctionName="DBSYSModel.Store.sp_DeleteMisc" />
+    <FunctionImportMapping FunctionImportName="sp_EventFilter" FunctionName="DBSYSModel.Store.sp_EventFilter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSYSModel.sp_EventFilter_Result">
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+          <ScalarProperty Name="Total_Applicants" ColumnName="Total Applicants" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Dbsys.Forms
 {
@@ -32,32 +33,41 @@ namespace Dbsys.Forms
         public void loadCbBoxYearLevel()
         {
 
-            var yearlevel = db.YearLevel.ToList();
+            var eventNames = db.Events.ToList();
 
-            cbboxYrLvl.ValueMember = "yrId";
-            cbboxYrLvl.DisplayMember = "yrName";
-            cbboxYrLvl.DataSource = yearlevel;
+            cbboxYrLvl.ValueMember = "eventId";
+            cbboxYrLvl.DisplayMember = "eventName";
+            cbboxYrLvl.DataSource = eventNames;
 
         }
 
         private void cbboxEvent_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbboxYrLvl.SelectedIndex == 0) 
+            try
             {
-                dgvEventSales.DataSource = userRepo.ShowTotalEventApplicants1stYear();
+                Events selectedEvent = (Events)cbboxYrLvl.SelectedItem;
+                string selectedValue = selectedEvent.eventName;
+
+                Console.WriteLine($"Selected value: {selectedValue}");
+
+                String strOutputMsg = "";
+
+                DataTable dataTable = userRepo.FilterEvent(selectedValue, ref strOutputMsg);
+
+                if (dataTable != null)
+                {
+                    dgvEventSales.DataSource = dataTable;
+                }
+                else
+                {
+                    Console.WriteLine("FilterEvent method did not return a DataTable");
+                }
             }
-            else if (cbboxYrLvl.SelectedIndex == 1) 
+            catch (Exception ex)
             {
-                dgvEventSales.DataSource = userRepo.ShowTotalEventApplicants2ndYear();
-            }
-            else if (cbboxYrLvl.SelectedIndex == 2)
-            {
-                dgvEventSales.DataSource = userRepo.ShowTotalEventApplicants3rdYear();
-            }
-            else if (cbboxYrLvl.SelectedIndex == 3)
-            {
-                dgvEventSales.DataSource = userRepo.ShowTotalEventApplicants4thYear();
+                Console.WriteLine($"An error occurred: {ex.Message}");
             }
         }
+
     }
 }
